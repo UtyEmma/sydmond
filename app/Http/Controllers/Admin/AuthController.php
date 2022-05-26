@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\LoginRequest;
 use App\Library\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +14,7 @@ class AuthController extends Controller{
         return view('admin.auth.login');
     }
 
-    function authenticate(Request $request){
+    function authenticate(LoginRequest $request){
         if(!Auth::guard('admin')->attempt([
             'email' => $request->email,
             'password' => $request->password
