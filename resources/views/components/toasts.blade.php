@@ -1,3 +1,11 @@
+@push('scripts')
+    <script src="{{asset('plugins/simple-notify/simple-notify.min.js')}}"></script>
+@endpush
+
+@push('styles')
+    <script src="{{asset('plugins/simple-notify/simple-notify.min.css')}}"></script>
+@endpush
+
 <script>
     function toast(type, message){
         new Notify ({

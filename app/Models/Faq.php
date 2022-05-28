@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Faq extends Model{
     use HasFactory;
 
-    protected $fillable = ['unique_id', 'title', 'content', 'status'];
+    protected $fillable = ['unique_id', 'question', 'content', 'status'];
 
     protected $primaryKey = 'unique_id';
     protected $keyType = 'string';

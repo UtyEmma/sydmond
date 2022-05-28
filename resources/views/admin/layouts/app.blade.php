@@ -2,7 +2,7 @@
 
 @section('content')
     @php
-    $admin = Auth::guard('admin')->user();
+        $admin = Auth::guard('admin')->user();
     @endphp
 
     @include('admin.layouts.navbar')

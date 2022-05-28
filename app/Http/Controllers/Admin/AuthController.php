@@ -19,7 +19,7 @@ class AuthController extends Controller{
             'email' => $request->email,
             'password' => $request->password
         ])){
-            return redirect()->back()->with('error', 'Invalid Email or Password');
+            return Response::redirectBack('error', 'Invalid Email or Password');
         }
 
         $request->session()->regenerate();
