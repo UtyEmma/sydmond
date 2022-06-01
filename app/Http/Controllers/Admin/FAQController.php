@@ -36,7 +36,7 @@ class FAQController extends Controller{
     function edit($id){
         try {
             $faqs = Faq::paginate();
-            $faq = Faq::find($id);
+            $faq = Faq::findOrFail($id);
             return Response::view('admin.faqs.edit-faq', [
                 'faqs' => $faqs,
                 'faq' => $faq
@@ -48,7 +48,7 @@ class FAQController extends Controller{
 
     function update(FAQRequest $request, $id){
         try {
-            $faq = Faq::find($id);
+            $faq = Faq::findOrFail($id);
             $faq->update($request->validated());
 
             return Response::redirectBack('success', "FAQ Updated");
@@ -59,7 +59,7 @@ class FAQController extends Controller{
 
     function delete($id){
         try {
-            Faq::find($id)->delete();
+            Faq::findOrFail($id)->delete();
             return Response::redirectBack('success', 'FAQ Deleted');
         } catch (\Throwable $th) {
             return Response::redirectBack('error', $th->getMessage());
@@ -68,7 +68,7 @@ class FAQController extends Controller{
 
     function status($id){
         try {
-            $faq = Faq::find($id);
+            $faq = Faq::findOrFail($id);
             $faq->status = !$faq->status;
             $faq->save();
             $status = $faq->status ? 'Enabled' : 'Disabled';

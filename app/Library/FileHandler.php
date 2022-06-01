@@ -2,29 +2,19 @@
 
 namespace App\Library;
 
-use Cloudinary\Cloudinary;
 use Exception;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 
 class FileHandler {
 
-    static function upload($files){
+    static function upload($file, $path, $name){
         try {
-            if(!$files) return false;
+            $ext = $file->getClientOriginalExtension();
+            $imageName = Str::slug($name).'.'.$ext;
+            $file->move(public_path($path), $imageName);
 
-            if(is_array($files)){
-                for($i=0; $i < count($files); $i++) {
-                    $file = $files[$i];
-                    if(!file_exists($file)) throw new Exception("No files Selected");
-                    $url = cloudinary()->upload($file->getRealPath())->getSecurePath();
-                    $file_array[$i] = $url;
-                }
-                return json_encode($file_array);
-            }
-
-            $url = cloudinary()->upload($files->getRealPath())->getSecurePath();
-        return $url;
+        return "$path/$imageName";
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -39,7 +29,6 @@ class FileHandler {
     static function deleteFile($file){
         if ($file) {
             $cloudinary_id = self::extractFileId($file);
-            cloudinary()->destroy($cloudinary_id);
         }
     }
 
