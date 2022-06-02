@@ -1,11 +1,11 @@
 <script>
     function parseRepeaterData() {
         const value = $('.repeater').repeaterVal();
-        const objectives = value['{{$name}}']
-        // console.log(objectives[0]['text-input'])
-                                // .filter(objective => objective['text-input'])
-                                // .map(objective => objective['text-input'])
-
+        console.log(value['{{$name}}'])
+        const objectives = value.{{$name}}
+                            .filter(objective => objective['text-input'])
+                            .map(objective => objective['text-input'])
+        console.log(objectives)
         $('#{{$name}}-input').val(JSON.stringify(objectives))
     }
 
@@ -26,7 +26,7 @@
 <div class="repeater">
     <div data-repeater-list="{{$name}}">
         <div data-repeater-item class="d-flex align-items-center my-2">
-            <textarea type="text" name="{{$name}}" onkeyup="parseRepeaterData()" class="flex-1 form-control mr-2" placeholder="{{$placeholder ?? ''}}"></textarea>
+            <input type="text" name="text-input" onblur="parseRepeaterData()" class="flex-1 form-control mr-2" placeholder="{{$placeholder ?? ''}}" />
             <div>
                 <button data-repeater-delete type="button" class="btn btn-danger btn-hover-dark h-auto btn-custom d-flex align-items-center justify-content-center py-2 px-2" >
                     <i class="mdi mdi-delete ml-0 fs-5"></i>

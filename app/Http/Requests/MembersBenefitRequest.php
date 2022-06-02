@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateTeamMemberRequest extends FormRequest
+class MembersBenefitRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,9 @@ class CreateTeamMemberRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string',
-            'role' => 'required|string',
-            'email' => 'nullable|string|email',
-            'phone' => 'nullable|numeric',
-            'image' => 'nullable|image',
-            'type' => 'required|in:trustee,management'
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'image' => 'nullable|image'
         ];
     }
 }

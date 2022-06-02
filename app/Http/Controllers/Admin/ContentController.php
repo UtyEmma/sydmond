@@ -19,8 +19,6 @@ class ContentController extends Controller{
     function update(Request $request){
         $content = Content::first();
 
-        dd($request->all());
-
         if($content){
             $content->update([
                 'vision' => $request->vision ?? $content->vision,

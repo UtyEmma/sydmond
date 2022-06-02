@@ -10,7 +10,13 @@
         <li class="nav-item">
             <a class="nav-link" href="/content">
                 <i class="mdi mdi-account menu-icon"></i>
-                <span class="menu-title">Website Content</span>
+                <span class="menu-title">About Content</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/benefits">
+                <i class="mdi mdi-account menu-icon"></i>
+                <span class="menu-title">Member Benefits</span>
             </a>
         </li>
         <li class="nav-item">

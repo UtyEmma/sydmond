@@ -9,7 +9,7 @@
                 <h4 class="card-title">Management Team</h4>
                 <div class="d-flex">
                     <button class="btn btn-primary" type="button" data-target="#team-modal" data-toggle="modal">Add Team Member</button>
-                    {{$teams->links()}}
+                    {{$benefits->links()}}
                 </div>
             </div>
 
@@ -17,43 +17,38 @@
                 <table class="table table-bordered table-responsive-md w-100">
                 <thead>
                     <tr>
-                    <th>Name</th>
-                    <th>Role</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Status</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Image</th>
                     <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($teams as $team)
+                    @forelse ($benefits as $benefit)
                         <tr>
                             <td>
-                                {{$team->name}}
+                                {{$benefit->title}}
                             </td>
                             <td>
-                                {{ $team->role }}
+                                {{ $benefit->description }}
                             </td>
                             <td>
-                                {{ $team->email }}
+                                {{ $benefit->email }}
                             </td>
                             <td>
-                                {{ $team->phone }}
+                                <div class="badge {{$benefit->status ? 'badge-primary' : 'badge-warning'}}">{{$benefit->status ? 'Enabled' : 'Disabled' }}</div>
                             </td>
                             <td>
-                                <div class="badge {{$team->status ? 'badge-primary' : 'badge-warning'}}">{{$team->status ? 'Enabled' : 'Disabled' }}</div>
-                            </td>
-                            <td>
-                                <a href="/management/{{$team->id}}/status" class="btn btn-secondary btn-sm text-white p-2"> <i class="mdi mdi-eye-outline"></i></a>
-                                <a data-toggle="modal" data-target="#team-modal-{{$team->id}}" class="btn btn-primary btn-sm text-white p-2"> <i class="mdi mdi-pencil-outline"></i></a>
-                                <a href="/management/{{$team->id}}/delete" class="btn btn-danger btn-square btn-sm text-white p-2"> <i class="mdi mdi-delete-outline"></i></a>
+                                <a href="/management/{{$benefit->id}}/status" class="btn btn-secondary btn-sm text-white p-2"> <i class="mdi mdi-eye-outline"></i></a>
+                                <a data-toggle="modal" data-target="#benefit-modal-{{$benefit->id}}" class="btn btn-primary btn-sm text-white p-2"> <i class="mdi mdi-pencil-outline"></i></a>
+                                <a href="/management/{{$benefit->id}}/delete" class="btn btn-danger btn-square btn-sm text-white p-2"> <i class="mdi mdi-delete-outline"></i></a>
                             </td>
                         </tr>
 
-                        <div class="modal fade" id="team-modal-{{$team->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="benefit-modal-{{$benefit->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
-                                    <form action="/management/{{$team->id}}/update" method="POST" enctype="multipart/form-data">
+                                    <form action="/management/{{$benefit->id}}/update" method="POST" enctype="multipart/form-data">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="exampleModalLabel">Edit Team Member Info</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -66,40 +61,19 @@
 
                                             <div class="form-group">
                                                 <label for="name">Full Name</label>
-                                                <input name="name" id="name" value="{{$team->name}}" placeholder="Full Name" class="form-control" type="text" />
+                                                <input name="name" id="name" value="{{$benefit->name}}" placeholder="Full Name" class="form-control" type="text" />
                                                 <x-errors name="name" />
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label for="role">Role</label>
-                                                        <input name="role" value="{{$team->role}}" id="role" placeholder="Role" class="form-control" type="text" />
-                                                        <x-errors name="role" />
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label for="type">Member Category</label>
-                                                        <select name="type" class="form-control" id="type">
-                                                            <option @selected($team->type === 'trustee') value="trustee">Trustee</option>
-                                                            <option @selected($team->type === 'management') value="management">Management</option>
-                                                        </select>
-                                                        <x-errors name="type" />
-                                                    </div>
-                                                </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="email">Email Address</label>
-                                                <input name="email" id="email" value="{{$team->email}}" placeholder="Email Address" class="form-control" type="text" />
+                                                <input name="email" id="email" value="{{$benefit->email}}" placeholder="Email Address" class="form-control" type="text" />
                                                 <x-errors name="email" />
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="phone">Phone Number</label>
-                                                <input name="phone" id="phone" value="{{$team->phone}}" placeholder="Phone Number" class="form-control" type="text" />
+                                                <input name="phone" id="phone" value="{{$benefit->phone}}" placeholder="Phone Number" class="form-control" type="text" />
                                                 <x-errors name="phone" />
                                             </div>
 
@@ -118,7 +92,7 @@
                             </div>
                         </div>
                     @empty
-                        <p>No Team Members</p>
+                        <p>No Members Benefit</p>
                     @endforelse
                 </tbody>
                 </table>

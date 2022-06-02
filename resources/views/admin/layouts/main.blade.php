@@ -12,7 +12,7 @@
         <!-- plugin css for this page -->
         <link rel="stylesheet" href="{{asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css')}}">
         <!-- End plugin css for this page -->
-        <link rel="stylesheet" href="{{asset('css/plugins/simple-notify.min.css')}}">
+        <link rel="stylesheet" href="{{asset('plugins/simple-notify/simple-notify.min.css')}}">
         <!-- inject:css -->
         <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
         <!-- endinject -->
@@ -40,7 +40,7 @@
         <script src="{{asset('admin/js/dataTables.bootstrap4.js')}}"></script>
         <!-- End custom js for this page-->
         <script src="{{asset('admin/js/jquery.cookie.js')}}" type="text/javascript"></script>
-        <script src="{{asset('js/plugins/simple-notify.min.js')}}"></script>
+        <script src="{{asset('plugins/simple-notify/simple-notify.min.js')}}"></script>
 
         <script src="{{asset('plugins/form-repeater/jquery-repeater.min.js')}}"></script>
 

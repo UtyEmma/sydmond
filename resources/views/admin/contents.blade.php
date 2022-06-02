@@ -64,7 +64,13 @@
 
                             <x-errors name="objectives" />
                             <div class="mt-3 p-4 border">
-                                {{$content->objectives ?? 'No Content Available'}}
+                                <ol class="row">
+                                    @foreach (json_decode($content->objectives) as $objective)
+                                        <li class="col-md-4">
+                                            {{ $objective }}
+                                        </li>
+                                    @endforeach
+                                </ol>
                             </div>
                         </div>
 

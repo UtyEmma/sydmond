@@ -42,7 +42,7 @@ class TeamController extends Controller{
     public function update(CreateTeamMemberRequest $request, $id){
         $team_member = Team::findOrFail($id);
         $image = $request->hasFile('image')
-                    ? FileHandler::update($request->file('image'), '/images/gallery', $request->name, $team_member->image)
+                    ? FileHandler::update($request->file('image'), $this->folder, $request->name, $team_member->image)
                     : $team_member->image;
 
         $values = collect($request->validated())->merge(['image' => $image]);
