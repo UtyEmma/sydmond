@@ -9,15 +9,15 @@ use Illuminate\Support\Facades\Storage;
 class FileHandler {
 
     static function upload($file, $path, $name){
-        try {
-            $ext = $file->getClientOriginalExtension();
-            $imageName = Str::slug($name).'.'.$ext;
-            $file->move(public_path($path), $imageName);
-
+        $ext = $file->getClientOriginalExtension();
+        $imageName = Str::slug($name).'.'.$ext;
+        $file->move(public_path($path), $imageName);
         return "$path/$imageName";
-        } catch (\Throwable $th) {
-            throw $th;
-        }
+    }
+
+    static function update($file, $path, $name, $oldFilePath){
+        self::deleteFile($oldFilePath);
+        return  self::upload($file, $path, $name);
     }
 
     static function deleteFiles(array $files){
@@ -26,10 +26,9 @@ class FileHandler {
         }
     }
 
-    static function deleteFile($file){
-        if ($file) {
-            $cloudinary_id = self::extractFileId($file);
-        }
+    static function deleteFile(string $file){
+        $path = public_path($file);
+        if(file_exists($path)) unlink($path);
     }
 
     private static function extractFileId($file){

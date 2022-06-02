@@ -50,7 +50,7 @@
                             <div class="modal fade" id="img-{{$image->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
-                                        <form action="/gallery/{{$image->unique_id}}/create" method="POST" enctype="multipart/form-data">
+                                        <form action="/gallery/{{$image->unique_id}}/update" method="POST" enctype="multipart/form-data">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLabel">Edit Image Details</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -59,7 +59,7 @@
                                         </div>
                                         <div class="modal-body">
                                                 @csrf
-
+                                                <input type="text" name="id" value="{{$image->unique_id}}" hidden>
                                                 <div class="form-group">
                                                     <label for="customFile">Select Image</label>
                                                     <input type="file" class="form-control" name="image" id="customFile">

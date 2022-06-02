@@ -8,6 +8,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="/content">
+                <i class="mdi mdi-account menu-icon"></i>
+                <span class="menu-title">Website Content</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="/users">
                 <i class="mdi mdi-account menu-icon"></i>
                 <span class="menu-title">Users</span>
@@ -18,6 +24,12 @@
             <i class="mdi mdi-help-circle-outline menu-icon"></i>
             <span class="menu-title">Faqs</span>
         </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/management">
+                <i class="mdi mdi-help-circle-outline menu-icon"></i>
+                <span class="menu-title">Management Team</span>
+            </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/testimonials">

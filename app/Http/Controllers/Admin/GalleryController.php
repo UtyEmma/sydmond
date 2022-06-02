@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\GalleryRequest;
+use App\Http\Requests\UpdateGalleryRequest;
 use App\Library\FileHandler;
 use App\Library\Response;
 use App\Library\Token;
@@ -64,23 +65,21 @@ class GalleryController extends Controller{
         }
     }
 
-    public function update(GalleryRequest $request, $id){
-        try {
-            $image = Gallery::findOrFail($id);
-            $image->update($request->validated());
+    public function update(UpdateGalleryRequest $request, $id){
+        $gallery = Gallery::findOrFail($id);
+        $image = $request->hasFile('image')
+                    ? FileHandler::update($request->file('image'), '/images/gallery', $request->title, $gallery->image)
+                    : $gallery->image;
 
-            return Response::redirectBack('success', "Gallery Image Updated");
-        } catch (\Throwable $th) {
-            return Response::redirectBack('error', $th->getMessage());
-        }
+        $values = collect($request->validated())->merge(['image' => $image]);
+        $gallery->update($values->all());
+        return Response::redirectBack('success', "Gallery Image Updated");
     }
 
     public function destroy($id){
-        try {
-            Gallery::findOrFail($id)->delete();
-            return Response::redirectBack('success', 'Gallery Image Deleted');
-        } catch (\Throwable $th) {
-            return Response::redirectBack('error', $th->getMessage());
-        }
+        $gallery = Gallery::findOrFail($id);
+        FileHandler::deleteFile($gallery->image);
+        $gallery->delete();
+        return Response::redirectBack('success', 'Gallery Image Deleted');
     }
 }

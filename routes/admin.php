@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\ContentController;
 use App\Http\Controllers\Admin\FAQController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\PagesController;
+use App\Http\Controllers\Admin\TeamController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -35,5 +37,21 @@ Route::middleware('auth:admin')->group(function(){
             Route::get('/edit', [GalleryController::class, 'edit']);
             Route::post('/update', [GalleryController::class, 'update']);
         });
+    });
+
+    Route::prefix('management')->group(function(){
+        Route::get('/', [TeamController::class, 'index']);
+        Route::post('/create', [TeamController::class, 'create']);
+
+        Route::prefix('/{id}')->group(function(){
+            Route::get('/delete', [TeamController::class, 'destroy']);
+            Route::get('/status', [TeamController::class, 'status']);
+            Route::post('/update', [TeamController::class, 'update']);
+        });
+    });
+
+    Route::prefix('content')->group(function(){
+        Route::get('/', [ContentController::class, 'index']);
+        Route::post('/update', [ContentController::class, 'update']);
     });
 });

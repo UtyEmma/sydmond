@@ -42,6 +42,8 @@
         <script src="{{asset('admin/js/jquery.cookie.js')}}" type="text/javascript"></script>
         <script src="{{asset('js/plugins/simple-notify.min.js')}}"></script>
 
+        <script src="{{asset('plugins/form-repeater/jquery-repeater.min.js')}}"></script>
+
         @stack('scripts')
 
     </head>

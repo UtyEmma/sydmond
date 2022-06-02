@@ -1,8 +1,6 @@
 <!-- Create the editor container -->
 <div id="{{$id ?? 'editor'}}" class="border radius" style="height: 200px"></div>
-<textarea type="text" id="{{$inputId ?? 'text-content'}}" hidden name="{{$name}}">
-    {{-- {!!$value ?? '' !!} --}}
-</textarea>
+<textarea type="text" id="{{$id.'-content' ?? 'text-content'}}" hidden name="{{$name}}"></textarea>
 
 @push('styles')
     <link rel="stylesheet" href="{{asset('plugins/quill/quill-snow.css')}}">
@@ -13,7 +11,8 @@
 
     <script>
         $(document).ready(() => {
-            var quill = new Quill('{{$id ?? '#editor'}}', {
+            const textContentName = '#{{ $id."-content" ?? "text-content"}}'
+            var quill = new Quill("{{'#'.$id ?? '#editor'}}", {
                 modules: {
                     toolbar: [
                         [{ 'header': [1, 2, 3, 4, 5,  false] }],
@@ -45,7 +44,7 @@
             // console.log(quill.root)
             quill.root.insertAdjacentHTML('afterbegin', "{!! $value ?? '' !!}")
             quill.on('text-change', function(delta, oldDelta, source) {
-                $('#{{$inputId ?? 'text-content'}}').val(quill.root.innerHTML)
+                $(textContentName).val(quill.root.innerHTML)
             });
 
             $('.ql-toolbar').addClass('border radius mb-2 p-2 py-3')
