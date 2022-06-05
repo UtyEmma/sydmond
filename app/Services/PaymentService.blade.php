@@ -7,17 +7,17 @@ use App\Models\User;
 
 class PaymentService {
 
-    function initialize(User::class $user, $reference, $amount, $redirect){
+    function initialize($reference, $details, $redirect){
         $response = Http::withHeaders([
             'Authorization' => "Bearer ".env('RAVE_SECRET_KEY')
         ])->post(env('RAVE_API_BASE_URL').'/payments', [
-            'tx_ref' => $transaction->reference,
-            'amount' => $transaction->amount,
+            'tx_ref' => $reference,
+            'amount' => $details->amount,
             'currency' => "NGN",
             'redirect_url' => $redirect,
             'customer' => [
-                'email' => $user->email,
-                'name' => "$user->firstname $user->lastname"
+                'email' => $details->email,
+                'name' => "$details->firstname $details->lastname"
             ],
             'customizations' => [
                 'title' => env('APP_NAME')

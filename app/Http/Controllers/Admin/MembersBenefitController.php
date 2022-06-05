@@ -22,12 +22,11 @@ class MembersBenefitController extends Controller{
     }
 
     public function create(MembersBenefitRequest $request){
-        $unique_id = Token::unique('members_benefits');
         $file = $request->file('image');
-        $image = FileHandler::upload($file, $this->folder, $request->name);
-        $values = collect($request->validated())->merge(['unique_id' => $unique_id, 'image' => $image]);
+        $image = FileHandler::upload($file, $this->folder, $request->title);
+        $values = collect($request->validated())->merge(['image' => $image]);
         MembersBenefit::create($values->all());
-        return Response::redirectBack('success', 'FAQ Created');
+        return Response::redirectBack('success', 'Member Benefit Created');
     }
 
     public function status($id){
@@ -36,24 +35,24 @@ class MembersBenefitController extends Controller{
         $benefit->save();
         $status = $benefit->status ? 'Enabled' : 'Disabled';
 
-        return Response::redirectBack('success', "Team Member $status");
+        return Response::redirectBack('success', "Member Benefit $status");
     }
 
     public function update(MembersBenefitRequest $request, $id){
         $benefit = MembersBenefit::findOrFail($id);
         $image = $request->hasFile('image')
-                    ? FileHandler::update($request->file('image'), $this->folder, $request->name, $benefit->image)
+                    ? FileHandler::update($request->file('image'), $this->folder, $request->title, $benefit->image)
                     : $benefit->image;
 
         $values = collect($request->validated())->merge(['image' => $image]);
         $benefit->update($values->all());
-        return Response::redirectBack('success', "Team Member Info Updated");
+        return Response::redirectBack('success', "Member Benefit Updated");
     }
 
     public function destroy($id){
         $benefit = MembersBenefit::findOrFail($id);
         FileHandler::deleteFile($benefit->image);
         $benefit->delete();
-        return Response::redirectBack('success', 'Team Member Deleted');
+        return Response::redirectBack('success', 'Member Benefit Deleted');
     }
 }

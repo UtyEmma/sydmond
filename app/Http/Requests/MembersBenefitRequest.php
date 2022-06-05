@@ -11,8 +11,7 @@ class MembersBenefitRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
-    {
+    public function authorize(){
         return true;
     }
 

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('members_benefits', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('description');
+            $table->longText('description');
             $table->string('image')->nullable();
             $table->boolean('status');
             $table->timestamps();

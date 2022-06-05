@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class MembersBenefit extends Model{
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'status'];
+    protected $fillable = ['title', 'description', 'image', 'status'];
 
 
     protected $attributes = [
