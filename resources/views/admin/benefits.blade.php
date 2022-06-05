@@ -106,41 +106,14 @@
                 @csrf
 
                 <div class="form-group">
-                    <label for="name">Full Name</label>
+                    <label for="name">Title</label>
                     <input name="name" id="name" placeholder="Full Name" class="form-control" type="text" />
                     <x-errors name="name" />
                 </div>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="role">Role</label>
-                            <input name="role" id="role" placeholder="Role" class="form-control" type="text" />
-                            <x-errors name="role" />
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="type">Member Category</label>
-                            <select name="type" class="form-control" id="type">
-                                <option value="trustee">Trustee</option>
-                                <option value="management">Management</option>
-                            </select>
-                            <x-errors name="type" />
-                        </div>
-                    </div>
-                </div>
-
                 <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input name="email" id="email" placeholder="Email Address" class="form-control" type="text" />
-                    <x-errors name="email" />
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input name="phone" id="phone" placeholder="Phone Number" class="form-control" type="text" />
+                    <label for="phone">Description</label>
+                    <x-editor name="description" id="description" />
                     <x-errors name="phone" />
                 </div>
 
