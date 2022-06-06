@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\ContentController;
 use App\Http\Controllers\Admin\FAQController;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\MemberCategoryController;
 use App\Http\Controllers\Admin\MembersBenefitController;
 use App\Http\Controllers\Admin\PagesController;
 use App\Http\Controllers\Admin\TeamController;
@@ -59,6 +60,17 @@ Route::middleware('auth:admin')->group(function(){
             Route::get('/delete', [MembersBenefitController::class, 'destroy']);
             Route::get('/status', [MembersBenefitController::class, 'status']);
             Route::post('/update', [MembersBenefitController::class, 'update']);
+        });
+    });
+
+    Route::prefix('memberships')->group(function(){
+        Route::get('/', [MemberCategoryController::class, 'index']);
+        Route::post('/create', [MemberCategoryController::class, 'create']);
+
+        Route::prefix('/{id}')->group(function(){
+            Route::get('/delete', [MemberCategoryController::class, 'destroy']);
+            Route::get('/status', [MemberCategoryController::class, 'status']);
+            Route::post('/update', [MemberCategoryController::class, 'update']);
         });
     });
 

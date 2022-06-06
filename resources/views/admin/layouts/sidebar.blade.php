@@ -20,6 +20,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="/memberships">
+                <i class="mdi mdi-account menu-icon"></i>
+                <span class="menu-title">Membership Categories</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="/users">
                 <i class="mdi mdi-account menu-icon"></i>
                 <span class="menu-title">Users</span>
