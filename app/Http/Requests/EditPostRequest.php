@@ -4,15 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateTeamMemberRequest extends FormRequest
+class EditPostRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-    public function authorize()
-    {
+    public function authorize(){
         return true;
     }
 
@@ -21,15 +20,16 @@ class CreateTeamMemberRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
-    {
+    public function rules(){
+        $unique_id = $this->id;
+
         return [
-            'name' => 'required|string',
-            'role' => 'required|string',
-            'email' => 'nullable|string|email',
-            'phone' => 'nullable|numeric',
+            'title' => "required|string|unique:posts,title,$unique_id,id",
+            'excerpt' => 'required|string',
+            'content' => 'required|string',
             'image' => 'nullable|image',
-            'type' => 'required|in:trustee,management,volunteer'
+            'tags' => 'required|string|json',
+            'author' => 'required|string',
         ];
     }
 }

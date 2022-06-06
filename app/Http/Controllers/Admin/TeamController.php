@@ -25,6 +25,7 @@ class TeamController extends Controller{
         $unique_id = Token::unique('teams');
         $file = $request->file('image');
         $image = FileHandler::upload($file, $this->folder, $request->name);
+        // dd($request->validated());
         $values = collect($request->validated())->merge(['unique_id' => $unique_id, 'image' => $image]);
         Team::create($values->all());
         return Response::redirectBack('success', 'FAQ Created');

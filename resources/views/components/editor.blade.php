@@ -42,7 +42,7 @@
                 theme: 'snow'  // or 'bubble'
             });
             // console.log(quill.root)
-            quill.root.insertAdjacentHTML('afterbegin', "{!! $value ?? '' !!}")
+            quill.root.insertAdjacentHTML('afterbegin', "{!! $value ?? old($name) !!}")
             quill.on('text-change', function(delta, oldDelta, source) {
                 $(textContentName).val(quill.root.innerHTML)
             });

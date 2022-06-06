@@ -19,8 +19,8 @@
                     <tr>
                     <th>Name</th>
                     <th>Role</th>
+                    <th>Position</th>
                     <th>Email</th>
-                    <th>Phone</th>
                     <th>Status</th>
                     <th></th>
                     </tr>
@@ -32,13 +32,13 @@
                                 {{$team->name}}
                             </td>
                             <td>
-                                {{ $team->role }}
+                                <div class="badge badge-primary">{{$team->type}}</div>
+                            </td>
+                            <td>
+                                <h5>{{ $team->role }}</h5>
                             </td>
                             <td>
                                 {{ $team->email }}
-                            </td>
-                            <td>
-                                {{ $team->phone }}
                             </td>
                             <td>
                                 <div class="badge {{$team->status ? 'badge-primary' : 'badge-warning'}}">{{$team->status ? 'Enabled' : 'Disabled' }}</div>
@@ -85,6 +85,7 @@
                                                         <select name="type" class="form-control" id="type">
                                                             <option @selected($team->type === 'trustee') value="trustee">Trustee</option>
                                                             <option @selected($team->type === 'management') value="management">Management</option>
+                                                            <option @selected($team->type === 'volunteer') value="volunteer">Volunteer</option>
                                                         </select>
                                                         <x-errors name="type" />
                                                     </div>
@@ -119,28 +120,28 @@
                         </div>
                     @empty
                         <p>No Team Members</p>
-                    @endforelse
-                </tbody>
+                        @endforelse
+                    </tbody>
                 </table>
-            </div>
             </div>
         </div>
     </div>
+</div>
 
-    <form action="/management/create" method="POST" enctype="multipart/form-data">
-        <x-modal id="team-modal" title="Add Team Member">
-                @csrf
+<form action="/management/create" method="POST" enctype="multipart/form-data">
+    <x-modal id="team-modal" title="Add Team Member">
+        @csrf
 
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input name="name" id="name" placeholder="Full Name" class="form-control" type="text" />
+            <x-errors name="name" />
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
                 <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input name="name" id="name" placeholder="Full Name" class="form-control" type="text" />
-                    <x-errors name="name" />
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="role">Role</label>
+                    <label for="role">Role</label>
                             <input name="role" id="role" placeholder="Role" class="form-control" type="text" />
                             <x-errors name="role" />
                         </div>
@@ -152,6 +153,7 @@
                             <select name="type" class="form-control" id="type">
                                 <option value="trustee">Trustee</option>
                                 <option value="management">Management</option>
+                                <option value="volunteer">Volunteer</option>
                             </select>
                             <x-errors name="type" />
                         </div>

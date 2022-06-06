@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Team extends Model{
+class Post extends Model{
     use HasFactory;
 
-    protected $fillable = ['unique_id', 'name', 'role', 'email', 'phone', 'image', 'type', 'status'];
+    protected $fillable = ['title', 'slug', 'excerpt', 'content', 'image', 'tags', 'author', 'status'];
 
     protected $attributes = [
         'status' => true

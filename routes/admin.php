@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\MemberCategoryController;
 use App\Http\Controllers\Admin\MembersBenefitController;
 use App\Http\Controllers\Admin\PagesController;
 use App\Http\Controllers\Admin\TeamController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -71,6 +72,19 @@ Route::middleware('auth:admin')->group(function(){
             Route::get('/delete', [MemberCategoryController::class, 'destroy']);
             Route::get('/status', [MemberCategoryController::class, 'status']);
             Route::post('/update', [MemberCategoryController::class, 'update']);
+        });
+    });
+
+    Route::prefix('posts')->group(function(){
+        Route::get('/', [PostController::class, 'index']);
+        Route::get('/new', [PostController::class, 'newPost']);
+        Route::post('/create', [PostController::class, 'create']);
+
+        Route::prefix('/{id}')->group(function(){
+            Route::get('/edit', [PostController::class, 'edit']);
+            Route::get('/delete', [PostController::class, 'destroy']);
+            Route::get('/status', [PostController::class, 'status']);
+            Route::post('/update', [PostController::class, 'update']);
         });
     });
 

@@ -23,8 +23,8 @@
 </script>
 
 <div class="repeater">
-    <div data-repeater-list="{{$name}}">
-        <div data-repeater-item class="d-flex align-items-center my-2">
+    <div data-repeater-list="{{$name}}" class="row">
+        <div data-repeater-item class="col-md-4 col-6 d-flex align-items-center ">
             <input type="text" name="text-input" onblur="parseRepeaterData()" class="flex-1 form-control mr-2" placeholder="{{$placeholder ?? ''}}" />
             <div>
                 <button data-repeater-delete type="button" class="btn btn-danger btn-hover-dark h-auto btn-custom d-flex align-items-center justify-content-center py-2 px-2" >
@@ -33,7 +33,9 @@
             </div>
         </div>
     </div>
-    <button data-repeater-create type="button" class="w-auto mt-2 btn btn-primary btn-hover-dark btn-custom">Add</button>
+    <div>
+        <button data-repeater-create type="button" class="w-auto mt-2 btn btn-primary btn-hover-dark btn-custom">Add</button>
+    </div>
     <input type="text" name="{{$name}}" id="{{$name}}-input" hidden>
 </div>
 
