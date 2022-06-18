@@ -4,11 +4,11 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\ContentController;
 use App\Http\Controllers\Admin\FAQController;
 use App\Http\Controllers\Admin\GalleryController;
-use App\Http\Controllers\Admin\MemberCategoryController;
-use App\Http\Controllers\Admin\MembersBenefitController;
 use App\Http\Controllers\Admin\PagesController;
-use App\Http\Controllers\Admin\TeamController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\MembersBenefitController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -85,6 +85,19 @@ Route::middleware('auth:admin')->group(function(){
             Route::get('/delete', [PostController::class, 'destroy']);
             Route::get('/status', [PostController::class, 'status']);
             Route::post('/update', [PostController::class, 'update']);
+        });
+    });
+
+    Route::prefix('events')->group(function(){
+        Route::get('/', [EventController::class, 'all']);
+        Route::get('/new', [EventController::class, 'new']);
+        Route::post('/create', [EventController::class, 'create']);
+
+        Route::prefix('/{id}')->group(function(){
+            Route::get('/edit', [EventController::class, 'edit']);
+            Route::get('/delete', [EventController::class, 'destroy']);
+            Route::get('/status', [EventController::class, 'status']);
+            Route::post('/update', [EventController::class, 'update']);
         });
     });
 

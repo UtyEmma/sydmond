@@ -7,9 +7,7 @@ use App\Http\Requests\EditPostRequest;
 use App\Library\FileHandler;
 use App\Library\Response;
 use App\Library\Str;
-use App\Library\Token;
 use App\Models\Post;
-use Illuminate\Http\Request;
 
 class PostController extends Controller{
 
@@ -19,6 +17,29 @@ class PostController extends Controller{
         $posts = Post::paginate();
         return Response::view('admin.posts.posts', [
             'posts' => $posts
+        ]);
+    }
+
+    function list(){
+        $posts = Post::where('status', true)->paginate(7);
+        return Response::view('blog.index', [
+            'posts' => $posts,
+            'siteName' => env('SITE_NAME')
+        ]);
+    }
+
+    function show($slug){
+        if(!$post = Post::where('status', true)->where('slug', $slug)->first()) abort(404, "Post Not Found");
+
+        $recent = Post::where('status', true)->where('slug', '!=', $post->slug)->orderBy('created_at')->limit(3);
+
+        $suggested = Post::where('status', true)->where('slug', '!=', $post->slug)->get();
+
+        return Response::view('blog.blog-post', [
+            'post' => $post,
+            'siteName' => env('SITE_NAME'),
+            'recent' => $recent->get(),
+            'suggested' => $suggested->random()->limit(3)->get()
         ]);
     }
 

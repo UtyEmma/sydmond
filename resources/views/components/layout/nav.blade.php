@@ -39,8 +39,8 @@
             </ul>
         </div>
         <div class="aside-dropdown__item">
-            <div class="aside-inner"><span class="aside-inner__title">Email</span><a class="aside-inner__link" href="mailto:<?php print $siteEmail;?>"><?php print $siteEmail;?></a></div>
-            <div class="aside-inner"><span class="aside-inner__title">Phone numbers</span><a class="aside-inner__link" href="tel:<?php print $sitePhone;?>"><?php print $sitePhone;?></a><a class="aside-inner__link" href="tel:<?php print $sitePhone;?>"><?php print $sitePhone;?></a></div>
+            <div class="aside-inner"><span class="aside-inner__title">Email</span><a class="aside-inner__link" href="mailto:{{env('SITE_EMAIL')}}">{{env('SITE_EMAIL')}}</a></div>
+            <div class="aside-inner"><span class="aside-inner__title">Phone numbers</span><a class="aside-inner__link" href="tel:{{env('SITE_PHONE')}}">{{env('SITE_PHONE')}}</a><a class="aside-inner__link" href="tel:{{env('SITE_PHONE')}}">{{env('SITE_PHONE')}}</a></div>
             <ul class="aside-socials">
                 <li class="aside-socials__item"><a class="aside-socials__link" href="https://instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                 <li class="aside-socials__item"><a class="aside-socials__link aside-socials__link--active" href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -50,6 +50,7 @@
         <div class="aside-dropdown__item" style=""><a class="button button--squared" href="donate"><span>Donate</span></a></div>
     </div>
 </div>
+
 <header class="header header--front">
     <div class="container-fluid">
         <div class="row no-gutters justify-content-between">
@@ -57,7 +58,7 @@
                 <div class="dropdown-trigger d-none d-sm-block">
                     <div class="dropdown-trigger__item"></div>
                 </div>
-                <div class="header-logo"><a class="header-logo__link" href="./"><img class="header-logo__img logo--light" src="img/logo_white.png" alt="logo"/><img class="header-logo__img logo--dark" src="img/logo_dark.png" alt="logo"/></a></div>
+                <div class="header-logo"><a class="header-logo__link" href="./"><img class="header-logo__img logo--light" src="{{asset('site/img/logo_white.png')}}" alt="logo"/><img class="header-logo__img logo--dark" src="img/logo_dark.png" alt="logo"/></a></div>
             </div>
             <div class="col-auto">
                 <!-- main menu start-->

@@ -6,8 +6,9 @@
             <div class="promo-slider">
                 <div class="promo-slider__item promo-slider__item--style-1">
                     <picture>
-                        <source srcset="img/promo_1.jpg" media="(min-width: 835px)"/>
-                        <source srcset="img/834promo_1.jpg" media="(min-width: 376px)"/><img class="img--bg" src="img/375promo_1.jpg" alt="img"/>
+                        <source srcset="{{asset('site/img/promo_1.jpg')}}" media="(min-width: 835px)"/>
+                        <source srcset="{{asset('site/img/834promo_1.jpg')}}" media="(min-width: 376px)"/>
+                        <img class="img--bg" src="{{asset('site/img/375promo_1.jpg')}}" alt="img"/>
                     </picture>
                     <div class="container">
                         <div class="row">
@@ -29,8 +30,9 @@
                 </div>
                 <div class="promo-slider__item promo-slider__item--style-2">
                     <picture>
-                        <source srcset="img/promo_2.jpg" media="(min-width: 835px)"/>
-                        <source srcset="img/834promo_2.jpg" media="(min-width: 376px)"/><img class="img--bg" src="img/375promo_2.jpg" alt="img"/>
+                        <source srcset="{{asset('site/img/promo_2.jpg')}}" media="(min-width: 835px)"/>
+                        <source srcset="{{asset('site/img/834promo_2.jpg')}}" media="(min-width: 376px)"/>
+                        <img class="img--bg" src="{{asset('site/img/375promo_2.jpg')}}" alt="img"/>
                     </picture>
                     <div class="container">
                         <div class="row">
@@ -52,8 +54,9 @@
                 </div>
                 <div class="promo-slider__item promo-slider__item--style-3">
                     <picture>
-                        <source srcset="img/promo_3.jpg" media="(min-width: 835px)"/>
-                        <source srcset="img/834promo_3.jpg" media="(min-width: 376px)"/><img class="img--bg" src="img/375promo_3.jpg" alt="img"/>
+                        <source srcset="{{asset('site/img/promo_3.jpg')}}" media="(min-width: 835px)"/>
+                        <source srcset="{{asset('site/img/834promo_3.jpg')}}" media="(min-width: 376px)"/>
+                        <img class="img--bg" src="{{asset('site/img/375promo_3.jpg')}}" alt="img"/>
                     </picture>
                     <div class="container">
                         <div class="row">
@@ -61,7 +64,7 @@
                                 <div class="align-container">
                                     <div class="align-container__item">
                                         <div class="promo-slider__wrapper-1">
-                                            <h2 class="promo-slider__title"><span><?php print $siteName;?> Volounteers</span><br/><span>Around the world.</span></h2>
+                                            <h2 class="promo-slider__title"><span>{{env('SITE_NAME')}} Volounteers</span><br/><span>Around the world.</span></h2>
                                         </div>
                                         <div class="promo-slider__wrapper-2">
                                             <p class="promo-slider__subtitle">Gray eel-catfish longnose whiptail catfish smalleye squaretail queen danio unicorn fish shortnose greeneye fusilier fish silver carp nibbler sharksucker tench lookdown catfish</p>
@@ -84,7 +87,7 @@
             <!-- promo socials end-->
             <!-- promo pannel start-->
             <div class="promo-pannel"><a class="anchor promo-pannel__anchor" href="#about"> <span>Scroll Down</span></a>
-                <div class="promo-pannel__video"><img class="img--bg" src="img/video_block.jpg" alt="image"/><a class="video-trigger" href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"><span>Watch our video</span><i class="fa fa-play" aria-hidden="true"></i></a></div>
+                <div class="promo-pannel__video"><img class="img--bg" src="{{asset('site/img/video_block.jpg')}}" alt="image"/><a class="video-trigger" href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"><span>Watch our video</span><i class="fa fa-play" aria-hidden="true"></i></a></div>
                 <div class="promo-pannel__phones">
                     <p class="promo-pannel__title">Phone numbers</p><a class="promo-pannel__link" href="tel:+180012345678">+ 1800 - 123 456 78</a><a class="promo-pannel__link" href="tel:+18009756511">+ 1800 - 975 65 11</a>
                 </div>
@@ -119,7 +122,9 @@
                         <p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail, Canthigaster rostrata. Midshipman dartfish Modoc sucker, yellowtail kingfish basslet. Buri chimaera triplespine northern sea robin zingel lancetfish galjoen fish, catla wolffish, mosshead warbonnet</p><a class="button button--primary" href="about.html">More About</a>
                     </div>
                     <div class="col-lg-6 col-xl-5 offset-xl-1">
-                        <div class="info-box"><img class="img--layout" src="img/about_layout.png" alt="img"/><img class="img--bg" src="img/about-us.jpg" alt="img"/>
+                        <div class="info-box">
+                            <img class="img--layout" src="{{asset('site/img/about_layout.png')}}" alt="img"/>
+                            <img class="img--bg" src="{{asset('site/img/about-us.jpg')}}" alt="img"/>
                             <h4 class="info-box__title">We are Awesome Volounteer Team</h4>
                             <p>Gray eel-catfish longnose whiptail catfish smalleye squaretail queen danio unicorn fish shortnose greeneye fusilier fish silver carp nibbler sharksucker tench lookdown catfish</p><a class="info-box__link" href="volunteer.html">Become a volounteer</a>
                         </div>
@@ -141,7 +146,7 @@
                 <div class="row">
                     <div class="col-6 col-lg-3">
                         <div class="icon-item">
-                            <div class="icon-item__img"><img class="img--layout" src="img/icon_1-1.png" alt="img"/>
+                            <div class="icon-item__img"><img class="img--layout" src="{{asset('site/img/icon_1-1.png')}}" alt="img"/>
                                 <svg class="icon icon-item__icon icon--red">
                                     <use xlink:href="#donation"></use>
                                 </svg>
@@ -153,7 +158,7 @@
                     </div>
                     <div class="col-6 col-lg-3">
                         <div class="icon-item">
-                            <div class="icon-item__img"><img class="img--layout" src="img/icon_2-2.png" alt="img"/>
+                            <div class="icon-item__img"><img class="img--layout" src="{{asset('site/img/icon_2-2.png')}}" alt="img"/>
                                 <svg class="icon icon-item__icon icon--orange">
                                     <use xlink:href="#church"></use>
                                 </svg>
@@ -165,7 +170,7 @@
                     </div>
                     <div class="col-6 col-lg-3">
                         <div class="icon-item">
-                            <div class="icon-item__img"><img class="img--layout" src="img/icon_3-3.png" alt="img"/>
+                            <div class="icon-item__img"><img class="img--layout" src="{{asset('site/img/icon_3-3.png')}}" alt="img"/>
                                 <svg class="icon icon-item__icon icon--green">
                                     <use xlink:href="#blood"></use>
                                 </svg>
@@ -177,7 +182,7 @@
                     </div>
                     <div class="col-6 col-lg-3">
                         <div class="icon-item">
-                            <div class="icon-item__img"><img class="img--layout" src="img/icon_4-4.png" alt="img"/>
+                            <div class="icon-item__img"><img class="img--layout" src="{{asset('site/img/icon_4-4.png')}}" alt="img"/>
                                 <svg class="icon icon-item__icon icon--blue">
                                     <use xlink:href="#charity"></use>
                                 </svg>
@@ -192,12 +197,12 @@
         </section>
         <!-- icons section end-->
         <!-- causes start-->
-        <section class="section causes"><img class="causes__bg" src="img/causes_img.png" alt="img"/>
+        <section class="section causes"><img class="causes__bg" src="{{asset('site/img/causes_img.png')}}" alt="img"/>
             <div class="container">
                 <div class="row align-items-end">
                     <div class="col-xl-5">
                         <div class="heading heading--primary"><span class="heading__pre-title">What we Do</span>
-                            <h2 class="heading__title"><span><?php print $siteName;?></span> <span>Causes</span></h2>
+                            <h2 class="heading__title"><span>{{env('SITE_NAME')}}</span> <span>Causes</span></h2>
                             <p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail, Canthigaster rostrata. Midshipman dartfish Modoc sucker, yellowtail kingfish</p>
                         </div>
                     </div>
@@ -249,7 +254,7 @@
                                         <p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail</p>
                                     </div>
                                     <div class="causes-item__img">
-                                        <div class="causes-item__badge" style="background-color: #49C2DF">Water Delivery</div><img class="img--bg" src="img/causes_1.jpg" alt="img"/>
+                                        <div class="causes-item__badge" style="background-color: #49C2DF">Water Delivery</div><img class="img--bg" src="{{asset('site/img/causes_1.jpg')}}" alt="img"/>
                                     </div>
                                     <div class="causes-item__lower">
                                         <div class="progress-bar">
@@ -273,7 +278,7 @@
                                         <p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail</p>
                                     </div>
                                     <div class="causes-item__img">
-                                        <div class="causes-item__badge" style="background-color: #F36F8F">Medicine</div><img class="img--bg" src="img/causes_2.jpg" alt="img"/>
+                                        <div class="causes-item__badge" style="background-color: #F36F8F">Medicine</div><img class="img--bg" src="{{asset('site/img/causes_2.jpg')}}" alt="img"/>
                                     </div>
                                     <div class="causes-item__lower">
                                         <div class="progress-bar">
@@ -297,7 +302,7 @@
                                         <p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail</p>
                                     </div>
                                     <div class="causes-item__img">
-                                        <div class="causes-item__badge" style="background-color: #2EC774">Education</div><img class="img--bg" src="img/causes_3.jpg" alt="img"/>
+                                        <div class="causes-item__badge" style="background-color: #2EC774">Education</div><img class="img--bg" src="{{asset('site/img/causes_3.jpg')}}" alt="img"/>
                                     </div>
                                     <div class="causes-item__lower">
                                         <div class="progress-bar">
@@ -321,7 +326,7 @@
                                         <p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail</p>
                                     </div>
                                     <div class="causes-item__img">
-                                        <div class="causes-item__badge" style="background-color: #F8AC3A">Food</div><img class="img--bg" src="img/causes_4.jpg" alt="img"/>
+                                        <div class="causes-item__badge" style="background-color: #F8AC3A">Food</div><img class="img--bg" src="{{asset('site/img/causes_4.jpg')}}" alt="img"/>
                                     </div>
                                     <div class="causes-item__lower">
                                         <div class="progress-bar">
@@ -348,7 +353,7 @@
                 <div class="row align-items-end margin-bottom">
                     <div class="col-lg-9">
                         <div class="heading heading--primary"><span class="heading__pre-title">What we Did</span>
-                            <h2 class="heading__title"><span><?php print $siteName;?></span> <span>Projects</span></h2>
+                            <h2 class="heading__title"><span>{{env('SITE_NAME')}}</span> <span>Projects</span></h2>
                             <p class="no-margin-bottom">Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail, Canthigaster rostrata. Midshipman dartfish Modoc sucker, yellowtail kingfish </p>
                         </div>
                     </div>
@@ -356,7 +361,7 @@
             </div>
             <div class="row no-gutters projects-masonry">
                 <div class="col-lg-6 col-xl-4 projects-masonry__item projects-masonry__item--height-1 projects-masonry__item--vertical">
-                    <div class="projects-masonry__img"><img class="img--bg" src="img/projects_1.jpg" alt="img"/></div>
+                    <div class="projects-masonry__img"><img class="img--bg" src="{{asset('site/img/projects_1.jpg')}}" alt="img"/></div>
                     <div class="projects-masonry__text" style="background-color: #2EC774;">
                         <div class="projects-masonry__inner"><span class="projects-masonry__badge" style="background: #49C2DF;">Water Delivery</span>
                             <h3 class="projects-masonry__title"> <a href="cause-details.html">More than One Life Changed</a></h3>
@@ -369,10 +374,10 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-xl-8 projects-masonry__item projects-masonry__item--height-2 projects-masonry__item--horizontal">
-                    <div class="projects-masonry__img"><img class="img--bg" src="img/projects_2.jpg" alt="img"/></div>
+                    <div class="projects-masonry__img"><img class="img--bg" src="{{asset('site/img/projects_2.jpg')}}" alt="img"/></div>
                     <div class="projects-masonry__text" style="background-color: #9BC35E;">
                         <div class="projects-masonry__inner"><span class="projects-masonry__badge" style="background: #F36F8F;">Medicine</span>
-                            <h3 class="projects-masonry__title"> <a href="cause-details.html"><?php print $siteName;?> for Help</a></h3>
+                            <h3 class="projects-masonry__title"> <a href="cause-details.html">{{env('SITE_NAME')}} for Help</a></h3>
                             <p>Gray eel-catfish longnose whiptail catfish smalleye squaretail queen danio unicorn fish shortnose greeneye fusilier fish silver carp</p>
                             <div class="projects-masonry__details-holder">
                                 <div class="projects-masonry__details-item"><span>Goal: </span><span>25 000$</span></div>
@@ -382,7 +387,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-xl-8 projects-masonry__item projects-masonry__item--height-1 projects-masonry__item--primary">
-                    <div class="projects-masonry__img"><img class="img--bg" src="img/projects_3.jpg" alt="img"/>
+                    <div class="projects-masonry__img"><img class="img--bg" src="{{asset('site/img/projects_3.jpg')}}" alt="img"/>
                         <div class="projects-masonry__inner"><span class="projects-masonry__badge" style="background: #F8AC3A;">Food</span>
                             <h3 class="projects-masonry__title"> <a href="cause-details.html">Help for Children of the East</a></h3>
                             <p>Murray cod clownfish American sole rockfish dojo loach gulper, trout-perch footballfish, pelican eel. Spinefoot coelacanth eagle ray </p>
@@ -394,7 +399,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-xl-4 projects-masonry__item projects-masonry__item--height-2 projects-masonry__item--primary">
-                    <div class="projects-masonry__img"><img class="img--bg" src="img/projects_4.jpg" alt="img"/>
+                    <div class="projects-masonry__img"><img class="img--bg" src="{{asset('site/img/projects_4.jpg')}}" alt="img"/>
                         <div class="projects-masonry__inner"><span class="projects-masonry__badge" style="background: #2EC774;">Education</span>
                             <h3 class="projects-masonry__title"> <a href="cause-details.html">Help for Children of the East</a></h3>
                             <p>Murray cod clownfish American sole rockfish dojo loach gulper, trout-perch footballfish, pelican eel. Spinefoot coelacanth eagle ray </p>
@@ -406,7 +411,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-xl-8 projects-masonry__item projects-masonry__item--height-2 projects-masonry__item--horizontal">
-                    <div class="projects-masonry__img"><img class="img--bg" src="img/projects_5.jpg" alt="img"/></div>
+                    <div class="projects-masonry__img"><img class="img--bg" src="{{asset('site/img/projects_5.jpg')}}" alt="img"/></div>
                     <div class="projects-masonry__text" style="background-color: #E78F51;">
                         <div class="projects-masonry__inner"><span class="projects-masonry__badge" style="background: #2EC774;">Education</span>
                             <h3 class="projects-masonry__title"> <a href="cause-details.html">Help for Children of the East</a></h3>
@@ -419,9 +424,9 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-xl-4 projects-masonry__item projects-masonry__item--height-2 projects-masonry__item--primary">
-                    <div class="projects-masonry__img"><img class="img--bg" src="img/projects_6.jpg" alt="img"/>
+                    <div class="projects-masonry__img"><img class="img--bg" src="{{asset('site/img/projects_6.jpg')}}" alt="img"/>
                         <div class="projects-masonry__inner"><span class="projects-masonry__badge" style="background: #F36F8F;">Medicine</span>
-                            <h3 class="projects-masonry__title"> <a href="cause-details.html"><?php print $siteName;?> for Help</a></h3>
+                            <h3 class="projects-masonry__title"> <a href="cause-details.html">{{env('SITE_NAME')}} for Help</a></h3>
                             <p>Gray eel-catfish longnose whiptail catfish smalleye squaretail queen danio unicorn fish shortnose greeneye fusilier fish silver carp</p>
                             <div class="projects-masonry__details-holder">
                                 <div class="projects-masonry__details-item"><span>Goal: </span><span>25 000$</span></div>
@@ -434,12 +439,12 @@
         </section>
         <!-- projects end-->
         <!-- events start-->
-        <section class="section events"><img class="events__bg" src="img/events_bg.png" alt="img"/>
+        <section class="section events"><img class="events__bg" src="{{asset('site/img/events_bg.png')}}" alt="img"/>
             <div class="container">
                 <div class="row margin-bottom">
                     <div class="col-12">
                         <div class="heading heading--primary heading--center"><span class="heading__pre-title">Events</span>
-                            <h2 class="heading__title"><span><?php print $siteName;?> Holds</span> <span>for You</span></h2>
+                            <h2 class="heading__title"><span>{{env('SITE_NAME')}} Holds</span> <span>for You</span></h2>
                             <p class="no-margin-bottom">Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail, Canthigaster rostrata. Midshipman dartfish</p>
                         </div>
                     </div>
@@ -447,7 +452,7 @@
                 <div class="row">
                     <div class="col-md-6 col-lg-4">
                         <div class="event-item">
-                            <div class="event-item__img"><img class="img--bg" src="img/event_1.jpg" alt="img"/></div>
+                            <div class="event-item__img"><img class="img--bg" src="{{asset('site/img/event_1.jpg')}}" alt="img"/></div>
                             <div class="event-item__content">
                                 <h6 class="event-item__title"><a href="#">Help for Language. Voluanteer</a></h6>
                                 <p><b>Dark Spurt,</b> San Francisco, CA 94528, USA</p>
@@ -458,7 +463,7 @@
                     </div>
                     <div class="col-md-6 col-lg-4">
                         <div class="event-item">
-                            <div class="event-item__img"><img class="img--bg" src="img/event_2.jpg" alt="img"/></div>
+                            <div class="event-item__img"><img class="img--bg" src="{{asset('site/img/event_2.jpg')}}" alt="img"/></div>
                             <div class="event-item__content">
                                 <h6 class="event-item__title"><a href="#">The Culture of Africa. Rebirth</a></h6>
                                 <p><b>Dark Spurt,</b> San Francisco, CA 94528, USA</p>
@@ -469,7 +474,7 @@
                     </div>
                     <div class="col-md-6 col-lg-4">
                         <div class="event-item">
-                            <div class="event-item__img"><img class="img--bg" src="img/event_3.jpg" alt="img"/></div>
+                            <div class="event-item__img"><img class="img--bg" src="{{asset('site/img/event_3.jpg')}}" alt="img"/></div>
                             <div class="event-item__content">
                                 <h6 class="event-item__title"><a href="#">Help for Language. Voluanteer</a></h6>
                                 <p><b>Dark Spurt,</b> San Francisco, CA 94528, USA</p>
@@ -486,7 +491,7 @@
         </section>
         <!-- events end-->
         <!-- text section start-->
-        <section class="section text-section"><img class="text-section__bg" src="img/text-section.png" alt="img"/>
+        <section class="section text-section"><img class="text-section__bg" src="{{asset('site/img/text-section.png')}}" alt="img"/>
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
@@ -506,7 +511,7 @@
         <section class="section testimonials--style-2">
             <div class="testimonials--style-2__bg jarallax">
                 <picture>
-                    <source srcset="img/testimonials_2.jpg" media="(min-width: 992px)"/><img class="jarallax-img" src="img/testimonials_2.jpg" alt="img"/>
+                    <source srcset="{{asset('site/img/testimonials_2.jpg')}}" media="(min-width: 992px)"/><img class="jarallax-img" src="{{asset('img/testimonials_2.jpg')}}" alt="img"/>
                 </picture>
             </div>
             <div class="container">
@@ -556,19 +561,19 @@
         </section>
         <!-- testimonials style-2 end-->
         <!-- blog start-->
-        <section class="section blog"><img class="blog__bg" src="img/blog_bg.png" alt="img"/>
+        <section class="section blog"><img class="blog__bg" src="{{asset('site/img/blog_bg.png')}}" alt="img"/>
             <div class="container">
                 <div class="row margin-bottom">
                     <div class="col-12">
                         <div class="heading heading--primary heading--center"><span class="heading__pre-title">News</span>
-                            <h2 class="heading__title no-margin-bottom"><span><?php print $siteName;?></span> <span>Blog</span></h2>
+                            <h2 class="heading__title no-margin-bottom"><span>{{env('SITE_NAME')}}</span> <span>Blog</span></h2>
                         </div>
                     </div>
                 </div>
                 <div class="row offset-margin">
                     <div class="col-md-6 col-lg-5 col-xl-4">
                         <div class="blog-item blog-item--style-1">
-                            <div class="blog-item__img"><img class="img--bg" src="img/blog_1.jpg" alt="img"/><span class="blog-item__badge" style="background-color: #49C2DF;">Water Delivery</span></div>
+                            <div class="blog-item__img"><img class="img--bg" src="{{asset('site/img/blog_1.jpg')}}" alt="img"/><span class="blog-item__badge" style="background-color: #49C2DF;">Water Delivery</span></div>
                             <div class="blog-item__content">
                                 <h6 class="blog-item__title"><a href="#">Save the Children's Role in Fight Against Malnutrition Hailed</a></h6>
                                 <p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail canthigaster</p>
@@ -580,7 +585,7 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-7 col-xl-8">
-                        <div class="blog-item blog-item--style-2"><img class="img--bg" src="img/blog_2.png" alt="img"/>
+                        <div class="blog-item blog-item--style-2"><img class="img--bg" src="{{asset('site/img/blog_2.png')}}" alt="img"/>
                             <div class="blog-item__content"><span class="blog-item__badge" style="background-color: #2EC774;">Education</span>
                                 <h6 class="blog-item__title"><a href="#">Back to the future: Quality education through respect, commitment and accountability</a></h6>
                                 <p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail canthigaster rostrata. Midshipman dartfish Modoc sucker, yellowtail</p>
@@ -592,7 +597,7 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-7 col-xl-8">
-                        <div class="blog-item blog-item--style-2"><img class="img--bg" src="img/blog_3.png" alt="img"/>
+                        <div class="blog-item blog-item--style-2"><img class="img--bg" src="{{asset('site/img/blog_3.png')}}" alt="img"/>
                             <div class="blog-item__content"><span class="blog-item__badge" style="background-color: #F8AC3A;">Food</span>
                                 <h6 class="blog-item__title"><a href="#">Condolences to Families Effected By Flash Floods in Setswetla, Alexandra Township, Johannesburg</a></h6>
                                 <p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail canthigaster rostrata. Midshipman dartfish Modoc sucker, yellowtail</p>
@@ -605,7 +610,7 @@
                     </div>
                     <div class="col-md-6 col-lg-5 col-xl-4">
                         <div class="blog-item blog-item--style-1">
-                            <div class="blog-item__img"><img class="img--bg" src="img/blog_4.png" alt="img"/><span class="blog-item__badge" style="background-color: #F36F8F;">Medicine</span></div>
+                            <div class="blog-item__img"><img class="img--bg" src="{{asset('site/img/blog_4.png')}}" alt="img"/><span class="blog-item__badge" style="background-color: #F36F8F;">Medicine</span></div>
                             <div class="blog-item__content">
                                 <h6 class="blog-item__title"><a href="#">Save the Children's Role in Fight Against Malnutrition Hailed</a></h6>
                                 <p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail canthigaster</p>
@@ -636,16 +641,16 @@
                         <div class="slider-holder">
                             <div class="donors-slider donors-slider--style-1">
                                 <div class="donors-slider__item">
-                                    <div class="donors-slider__img"><img src="img/donor_1.png" alt="donor"/></div>
+                                    <div class="donors-slider__img"><img src="{{asset('site/img/donor_1.png')}}" alt="donor"/></div>
                                 </div>
                                 <div class="donors-slider__item">
-                                    <div class="donors-slider__img"><img src="img/donor_2.png" alt="donor"/></div>
+                                    <div class="donors-slider__img"><img src="{{asset('site/img/donor_2.png')}}" alt="donor"/></div>
                                 </div>
                                 <div class="donors-slider__item">
-                                    <div class="donors-slider__img"><img src="img/donor_3.png" alt="donor"/></div>
+                                    <div class="donors-slider__img"><img src="{{asset('site/img/donor_3.png')}}" alt="donor"/></div>
                                 </div>
                                 <div class="donors-slider__item">
-                                    <div class="donors-slider__img"><img src="img/donor_4.png" alt="donor"/></div>
+                                    <div class="donors-slider__img"><img src="{{asset('site/img/donor_4.png')}}" alt="donor"/></div>
                                 </div>
                             </div>
                         </div>
@@ -678,7 +683,7 @@
                     </div>
                 </div>
             </div>
-            <div class="instagram-slider"><a class="instagram-slider__item" href="#"><img class="img--bg" src="img/ig_1.jpg" alt="img"/><span class="instagram-slider__icon"><i class="fa fa-instagram" aria-hidden="true"></i></span><span class="instagram-slider__icon-hover"><i class="fa fa-instagram" aria-hidden="true"></i></span></a><a class="instagram-slider__item" href="#"><img class="img--bg" src="img/ig_2.jpg" alt="img"/><span class="instagram-slider__icon"><i class="fa fa-instagram" aria-hidden="true"></i></span><span class="instagram-slider__icon-hover"><i class="fa fa-instagram" aria-hidden="true"></i></span></a><a class="instagram-slider__item" href="#"><img class="img--bg" src="img/ig_3.jpg" alt="img"/><span class="instagram-slider__icon"><i class="fa fa-instagram" aria-hidden="true"></i></span><span class="instagram-slider__icon-hover"><i class="fa fa-instagram" aria-hidden="true"></i></span></a><a class="instagram-slider__item" href="#"><img class="img--bg" src="img/ig_4.jpg" alt="img"/><span class="instagram-slider__icon"><i class="fa fa-instagram" aria-hidden="true"></i></span><span class="instagram-slider__icon-hover"><i class="fa fa-instagram" aria-hidden="true"></i></span></a><a class="instagram-slider__item" href="#"><img class="img--bg" src="img/ig_5.jpg" alt="img"/><span class="instagram-slider__icon"><i class="fa fa-instagram" aria-hidden="true"></i></span><span class="instagram-slider__icon-hover"><i class="fa fa-instagram" aria-hidden="true"></i></span></a><a class="instagram-slider__item" href="#"><img class="img--bg" src="img/ig_6.jpg" alt="img"/><span class="instagram-slider__icon"><i class="fa fa-instagram" aria-hidden="true"></i></span><span class="instagram-slider__icon-hover"><i class="fa fa-instagram" aria-hidden="true"></i></span></a><a class="instagram-slider__item" href="#"><img class="img--bg" src="img/ig_4.jpg" alt="img"/><span class="instagram-slider__icon"><i class="fa fa-instagram" aria-hidden="true"></i></span><span class="instagram-slider__icon-hover"><i class="fa fa-instagram" aria-hidden="true"></i></span></a></div>
+            <div class="instagram-slider"><a class="instagram-slider__item" href="#"><img class="img--bg" src="{{asset('site/img/ig_1.jpg')}}" alt="img"/><span class="instagram-slider__icon"><i class="fa fa-instagram" aria-hidden="true"></i></span><span class="instagram-slider__icon-hover"><i class="fa fa-instagram" aria-hidden="true"></i></span></a><a class="instagram-slider__item" href="#"><img class="img--bg" src="{{asset('site/img/ig_2.jpg')}}" alt="img"/><span class="instagram-slider__icon"><i class="fa fa-instagram" aria-hidden="true"></i></span><span class="instagram-slider__icon-hover"><i class="fa fa-instagram" aria-hidden="true"></i></span></a><a class="instagram-slider__item" href="#"><img class="img--bg" src="{{asset('site/img/ig_3.jpg')}}" alt="img"/><span class="instagram-slider__icon"><i class="fa fa-instagram" aria-hidden="true"></i></span><span class="instagram-slider__icon-hover"><i class="fa fa-instagram" aria-hidden="true"></i></span></a><a class="instagram-slider__item" href="#"><img class="img--bg" src="{{asset('site/img/ig_4.jpg')}}" alt="img"/><span class="instagram-slider__icon"><i class="fa fa-instagram" aria-hidden="true"></i></span><span class="instagram-slider__icon-hover"><i class="fa fa-instagram" aria-hidden="true"></i></span></a><a class="instagram-slider__item" href="#"><img class="img--bg" src="{{asset('site/img/ig_5.jpg')}}" alt="img"/><span class="instagram-slider__icon"><i class="fa fa-instagram" aria-hidden="true"></i></span><span class="instagram-slider__icon-hover"><i class="fa fa-instagram" aria-hidden="true"></i></span></a><a class="instagram-slider__item" href="#"><img class="img--bg" src="{{asset('site/img/ig_6.jpg')}}" alt="img"/><span class="instagram-slider__icon"><i class="fa fa-instagram" aria-hidden="true"></i></span><span class="instagram-slider__icon-hover"><i class="fa fa-instagram" aria-hidden="true"></i></span></a><a class="instagram-slider__item" href="#"><img class="img--bg" src="{{asset('site/img/ig_4.jpg')}}" alt="img"/><span class="instagram-slider__icon"><i class="fa fa-instagram" aria-hidden="true"></i></span><span class="instagram-slider__icon-hover"><i class="fa fa-instagram" aria-hidden="true"></i></span></a></div>
         </section>
         <!-- instagram end-->
         <!-- subscribe start-->

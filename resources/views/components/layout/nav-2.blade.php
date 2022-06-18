@@ -40,8 +40,8 @@
             </ul>
         </div>
         <div class="aside-dropdown__item">
-            <div class="aside-inner"><span class="aside-inner__title">Email</span><a class="aside-inner__link" href="mailto:<?php print $siteEmail;?>"><?php print $siteEmail;?></a></div>
-            <div class="aside-inner"><span class="aside-inner__title">Phone numbers</span><a class="aside-inner__link" href="tel:<?php print $sitePhone;?>"><?php print $sitePhone;?></a><a class="aside-inner__link" href="tel:<?php print $sitePhone;?>"><?php print $sitePhone;?></a></div>
+            <div class="aside-inner"><span class="aside-inner__title">Email</span><a class="aside-inner__link" href="mailto:{{env('SITE_EMAIL')}}">{{env('SITE_EMAIL')}}</a></div>
+            <div class="aside-inner"><span class="aside-inner__title">Phone numbers</span><a class="aside-inner__link" href="tel:{{env('SITE_PHONE')}}">{{env('SITE_PHONE')}}</a><a class="aside-inner__link" href="tel:{{env('SITE_PHONE')}}">{{env('SITE_PHONE')}}</a></div>
             <ul class="aside-socials">
                 <li class="aside-socials__item"><a class="aside-socials__link" href="https://instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                 <li class="aside-socials__item"><a class="aside-socials__link aside-socials__link--active" href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -60,7 +60,11 @@
                 <div class="dropdown-trigger dropdown-trigger--inner d-none d-sm-block">
                     <div class="dropdown-trigger__item"></div>
                 </div>
-                <div class="header-logo"><a class="header-logo__link" href="./"><img class="header-logo__img" src="img/logo_dark.png" alt="logo"/></a></div>
+                <div class="header-logo">
+                    <a class="header-logo__link" href="./">
+                        <img class="header-logo__img" src="{{asset('site/img/logo_dark.png')}}" alt="logo"/>
+                    </a>
+                </div>
             </div>
             <div class="col-auto">
                 <!-- main menu start main-menu--inner-->
@@ -68,16 +72,16 @@
                     <ul class="main-menu main-menu--inner">
                         <!--<li class="main-menu__item main-menu__item--active"><a class="main-menu__link" href="./"><span>Home</span></a>
                         </li>-->
-                        <li class="main-menu__item"><a class="main-menu__link" href="about"><span>About</span></a>
+                        <li class="main-menu__item"><a class="main-menu__link" href="/about"><span>About</span></a>
                         </li>
-                        <li class="main-menu__item"><a class="main-menu__link" href="faq"><span>FAQs</span></a>
+                        <li class="main-menu__item"><a class="main-menu__link" href="/faq"><span>FAQs</span></a>
                         </li>
-                        <li class="main-menu__item"><a class="main-menu__link" href="gallery"><span>Gallery</span></a>
+                        <li class="main-menu__item"><a class="main-menu__link" href="/gallery"><span>Gallery</span></a>
                         </li>
                         <li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="javascript:void(0);"><span>News/Events</span></a>
                             <ul class="main-menu__sub-list">
-                                <li><a href="news"><span>News</span></a></li>
-                                <li><a href="events"><span>Events</span></a></li>
+                                <li><a href="/news"><span>News</span></a></li>
+                                <li><a href="/events"><span>Events</span></a></li>
                             </ul>
                         </li>
                         <li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="javascript:void(0);"><span>Membership</span></a>

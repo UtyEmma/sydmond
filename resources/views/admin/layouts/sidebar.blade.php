@@ -26,10 +26,30 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/posts">
-                <i class="mdi mdi-account menu-icon"></i>
-                <span class="menu-title">Posts</span>
+            <a class="nav-link" data-toggle="collapse" href="#post-basic" aria-controls="post-basic">
+              <i class="mdi mdi-circle-outline menu-icon"></i>
+              <span class="menu-title">Posts</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="post-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/posts">View Posts</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/posts/new">Create Post</a></li>
+              </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-controls="ui-basic">
+              <i class="mdi mdi-circle-outline menu-icon"></i>
+              <span class="menu-title">Events</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/events">View Events</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/events/new">Create Event</a></li>
+              </ul>
+            </div>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/users">

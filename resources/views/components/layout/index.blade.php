@@ -1,8 +1,10 @@
-<x-header />
+@include('components.layout.header')
     <body>
         <div class="page-wrapper">
-            <x-nav />
+            @include('components.layout.nav')
+
             {{$slot}}
+            @include('components.layout.footer')
         </div>
     </body>
-<x-footer/>
+</html>

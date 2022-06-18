@@ -6,8 +6,8 @@
     <meta name="keywords" content="keywords"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <link rel="shortcut icon" href="img/favicon.jpeg"/>
-    <link rel="stylesheet" href="css/styles.min.css"/>
+    <link rel="shortcut icon" href="{{asset('site/img/favicon.jpeg')}}"/>
+    <link rel="stylesheet" href="{{asset('site/css/styles.min.css')}}"/>
     @stack('head')
 
     @stack('styles')

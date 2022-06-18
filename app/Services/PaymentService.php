@@ -17,16 +17,31 @@ class PaymentService {
             'redirect_url' => $redirect,
             'customer' => [
                 'email' => $details->email,
-                'name' => "$details->firstname $details->lastname"
+                'name' => "$details->name"
             ],
             'customizations' => [
-                'title' => env('APP_NAME')
+                'title' => env('APP_NAME'),
+                'logo' => asset('site/img/logo_dark.png')
             ]
         ]);
 
         if($response->ok() && $response->status() === 200) {
             $res = $response->collect();
             if($res['status'] === 'success') return $res['data']['link'];
+        }
+
+        return false;
+    }
+
+    function verify($transaction, $id){
+        $response = Http::withHeaders([
+            'Authorization' => env('RAVE_SECRET_KEY')
+        ])->get("https://api.flutterwave.com/v3/transactions/".$id."/verify");
+
+        if($response->ok() && $response->status() === 200) {
+            $res = $response->json();
+            $status = $res['data']['status'];
+            return $status === 'successful';
         }
 
         return false;

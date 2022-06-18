@@ -37,7 +37,7 @@
 
                         <div class="col-md-6 form-group">
                             <label for="author">Post Author</label>
-                            <input name="author" id="author" placeholder="Author Name" class="form-control" type="text" />
+                            <input name="author" id="author" value="{{env('APP_NAME')}}" placeholder="Author Name" class="form-control" type="text" />
                             <x-errors name="author" />
                         </div>
 
