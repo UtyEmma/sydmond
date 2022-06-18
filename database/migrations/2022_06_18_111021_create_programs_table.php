@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('programs', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('slug');
+            $table->longText('subtitle');
+            $table->longText('content');
+            $table->string('image');
+            $table->boolean('status');
             $table->timestamps();
         });
     }

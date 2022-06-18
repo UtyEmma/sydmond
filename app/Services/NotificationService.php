@@ -9,7 +9,7 @@ class NotificationService {
 
     private $message = [];
     private $subject;
-    private $data;
+    private $data = [];
 
     function toArray(string $title, string $link = '', string $action = ''){
         return  [

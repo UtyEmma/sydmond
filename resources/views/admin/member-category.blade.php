@@ -29,7 +29,7 @@
                                 {{$category->category}}
                             </td>
                             <td>
-                                {!! $category->description !!}
+                                {!! Str::words($category->description, 40) !!}
                             </td>
                             <td>
                                 <div class="badge {{$category->status ? 'badge-primary' : 'badge-warning'}}">{{$category->status ? 'Enabled' : 'Disabled' }}</div>

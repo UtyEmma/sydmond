@@ -6,8 +6,10 @@ use App\Http\Controllers\Admin\FAQController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\PagesController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\MemberCategoryController;
 use App\Http\Controllers\MembersBenefitController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
@@ -61,6 +63,18 @@ Route::middleware('auth:admin')->group(function(){
             Route::get('/delete', [MembersBenefitController::class, 'destroy']);
             Route::get('/status', [MembersBenefitController::class, 'status']);
             Route::post('/update', [MembersBenefitController::class, 'update']);
+        });
+    });
+
+    Route::prefix('programs')->group(function(){
+        Route::get('/', [ProgramController::class, 'index']);
+        Route::get('/new', [ProgramController::class, 'new']);
+        Route::post('/create', [ProgramController::class, 'create']);
+
+        Route::prefix('/{id}')->group(function(){
+            Route::get('/delete', [ProgramController::class, 'destroy']);
+            Route::get('/status', [ProgramController::class, 'status']);
+            Route::post('/update', [ProgramController::class, 'update']);
         });
     });
 

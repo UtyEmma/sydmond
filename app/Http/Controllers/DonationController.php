@@ -27,14 +27,14 @@ class DonationController extends Controller{
             'reference' => $reference
         ])->all());
 
-        $redirect = env('APP_URL')."/donate/complete?ref=$donation->unique_id";
+        $redirect = env('APP_URL')."/donate/complete?ref=$donation->id";
         $payment_link = $paymentService->initialize($donation->reference, $donation, $redirect);
 
         if(!$payment_link) return Response::redirectBack('error', "Payment could not be initiated");
         return redirect()->away($payment_link);
     }
 
-    function complete(Request $request, PaymentService $paymentService, NotificationService $notificationService){
+    function verify(Request $request, PaymentService $paymentService, NotificationService $notificationService){
         $donation = Donations::find($request->ref);
         $status = $paymentService->verify($donation, $request->transaction_id);
         if(!$status) return Response::redirect('/donate', 'error', "Your Donation was not be completed");

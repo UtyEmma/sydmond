@@ -35,14 +35,20 @@
                         <div class="heading heading--primary"><span class="heading__pre-title">Support us through your donation</span>
                             <h2 class="heading__title"><span>Make an Online</span><span> Donation</span></h2>
                         </div>
+                        <small class="text-danger">@if(session('error')) {{session('error')}} @endif</small>
+                        <small class="text-success">@if(session('success')) {{session('success')}} @endif</small>
                         <form class="form user-form" action="/donate/pay" method="POST">
                             @csrf
                             <div class="row">
                                 <input class="form__field" required type="text" name="name" placeholder="First Name"/>
+                                <x-errors name="name" />
                                 <input class="form__field" type="email" name="email" placeholder="E-mail"/>
+                                <x-errors name="email" />
                                 <input class="form__field" type="tel"  name="phone" placeholder="Phone Number"/>
+                                <x-errors name="phone" />
 
                                 <input class="form__field" type="number" name="amount" required placeholder="Amount (NGN)"/>
+                                <x-errors name="amount" />
                             </div>
                             <div class="row">
                                 <div class="col-12">

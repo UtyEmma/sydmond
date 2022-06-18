@@ -1,5 +1,6 @@
 <!-- aside dropdown start-->
 <div class="aside-dropdown">
+    @inject('program', 'App\Models\Program')
     <div class="aside-dropdown__inner"><span class="aside-dropdown__close">
 					<svg class="icon">
 						<use xlink:href="#close"></use>
@@ -31,9 +32,10 @@
                 </li>
                 <li class="aside-menu__item aside-menu__item--has-child"><a class="aside-menu__link" href="javascript:void(0);"><span>Programmes</span></a>
                     <ul class="aside-menu__sub-list">
-                        <li><a href="awareness"><span>Awareness</span></a></li>
-                        <li><a href="research"><span>Research</span></a></li>
-                        <li><a href="fund-raising"><span>Fund Raising</span></a></li>
+                        @forelse ($program::all() as $program)
+                            <li><a href="/{{$program->slug}}"><span>{{$program->title}}</span></a></li>
+                        @empty
+                        @endforelse
                     </ul>
                 </li>
                 <li class="aside-menu__item"><a class="aside-menu__link" href="contacts"><span>Contact Us</span></a></li>
@@ -95,9 +97,10 @@
                         </li>
                         <li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="javascript:void(0);"><span>Programmes</span></a>
                             <ul class="main-menu__sub-list">
-                                <li><a href="awareness"><span>Awareness</span></a></li>
-                                <li><a href="research"><span>Research</span></a></li>
-                                <li><a href="fund-raising"><span>Fund Raising</span></a></li>
+                                @forelse ($program::all() as $program)
+                                    <li><a href="/{{$program->slug}}"><span>{{$program->title}}</span></a></li>
+                                @empty
+                                @endforelse
                                 <li><a href="donors"><span>Donors</span></a></li>
                             </ul>
                         </li>
