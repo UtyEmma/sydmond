@@ -55,4 +55,12 @@ class MembersBenefitController extends Controller{
         $benefit->delete();
         return Response::redirectBack('success', 'Member Benefit Deleted');
     }
+
+    public function list(){
+        $benefits = MembersBenefit::where('status', true)->get();
+        return Response::view('member-benefits', [
+            'siteName' => env('APP_NAME'),
+            'benefits' => $benefits
+        ]);
+    }
 }

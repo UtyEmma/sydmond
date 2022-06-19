@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\MemberCategoryController;
+use App\Http\Controllers\MembersBenefitController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProgramController;
@@ -23,7 +25,8 @@ Route::get('/events/{slug}', [EventController::class, 'show']);
 Route::get('/news', [PostController::class, 'list']);
 Route::get('/news/{slug}', [PostController::class, 'show']);
 
-Route::get('/membership-category', [TeamController::class, 'membershipCategory']);
+Route::get('/membership-category', [MemberCategoryController::class, 'list']);
+Route::get('/membership-category', [MemberCategoryController::class, 'list']);
 
 Route::prefix('donate')->group(function(){
     Route::get('/', [DonationController::class, 'index']);
@@ -35,5 +38,12 @@ Route::prefix('donate')->group(function(){
     });
 });
 
-Route::get('/{slug}', [ProgramController::class, 'show']);
+Route::get('/benefits-of-members', [MembersBenefitController::class, 'list']);
+Route::get('/programs/{slug}', [ProgramController::class, 'show']);
+
+Route::get('/volunteer-opportunities', [TeamController::class, 'volunteers']);
+Route::get('/membership-application-form', [TeamController::class, 'membershipApplication']);
+
+Route::post('membership-apply', [TeamController::class, 'membershipApply']);
+Route::post('volunteer-apply', [TeamController::class, 'membershipApply']);
 

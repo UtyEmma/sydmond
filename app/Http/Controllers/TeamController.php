@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateTeamMemberRequest;
+use App\Http\Requests\MemberApplicationRequest;
 use App\Http\Requests\UpdateTeamMemberRequest;
 use App\Library\FileHandler;
 use App\Library\Response;
 use App\Library\Token;
+use App\Models\Member;
 use App\Models\MemberCategory;
 use App\Models\Team;
+use Illuminate\Support\Facades\Request;
 
 class TeamController extends Controller{
 
@@ -66,13 +69,21 @@ class TeamController extends Controller{
         ]);
     }
 
-
-    public function membershipCategory(){
-        $memberships = MemberCategory::where('status', true)->get();
-        return Response::view('membership-category', [
-            'memberships' => $memberships,
-            'siteName' => env('SITE_NAME')
+    public function volunteers(){
+        return Response::view('volunteer-opportunities', [
+            'siteName' => env('APP_NAME')
         ]);
+    }
+
+    public function membershipApplication(){
+        return Response::view('membership-application', [
+            'siteName' => env('APP_NAME')
+        ]);
+    }
+
+    public function membershipApply(MemberApplicationRequest $request){
+        $members = Member::create($request->safe()->all());
+        return Response::redirectBack('success', "Your Application has been sent");
     }
 
 }

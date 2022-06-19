@@ -52,7 +52,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="description">Category Description</label>
+                                    <label for="description">Category Description (Recommended 100 words or less) </label>
                                     <x-editor name="description" value="{!! $category->description !!}" id="description-{{$category->id}}" />
                                     <x-errors name="description" />
                                 </div>

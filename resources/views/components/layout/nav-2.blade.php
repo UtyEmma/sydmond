@@ -33,7 +33,7 @@
                 <li class="aside-menu__item aside-menu__item--has-child"><a class="aside-menu__link" href="javascript:void(0);"><span>Programmes</span></a>
                     <ul class="aside-menu__sub-list">
                         @forelse ($program::all() as $program)
-                            <li><a href="/{{$program->slug}}"><span>{{$program->title}}</span></a></li>
+                            <li><a href="programs/{{$program->slug}}"><span>{{$program->title}}</span></a></li>
                         @empty
                         @endforelse
                     </ul>
@@ -98,7 +98,7 @@
                         <li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="javascript:void(0);"><span>Programmes</span></a>
                             <ul class="main-menu__sub-list">
                                 @forelse ($program::all() as $program)
-                                    <li><a href="/{{$program->slug}}"><span>{{$program->title}}</span></a></li>
+                                    <li><a href="programs/{{$program->slug}}"><span>{{$program->title}}</span></a></li>
                                 @empty
                                 @endforelse
                                 <li><a href="donors"><span>Donors</span></a></li>

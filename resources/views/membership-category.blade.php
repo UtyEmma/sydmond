@@ -3,7 +3,7 @@
     <main class="main">
         <section class="promo-primary">
             <picture>
-                <source srcset="img/volunteer.jpg" media="(min-width: 992px)"/><img class="img--bg" src="img/volunteer.jpg" alt="img"/>
+                <source srcset="{{asset('site/img/volunteer.jpg')}}" media="(min-width: 992px)"/><img class="img--bg" src="{{asset('site/img/volunteer.jpg')}}" alt="img"/>
             </picture>
             <div class="promo-primary__description"> <span>Compassion</span></div>
             <div class="container">
@@ -11,7 +11,7 @@
                     <div class="col-auto">
                         <div class="align-container">
                             <div class="align-container__item"><span class="promo-primary__pre-title"><?php print $siteName;?></span>
-                                <h1 class="promo-primary__title"><span>Team</span> <span>Member</span></h1>
+                                <h1 class="promo-primary__title"><span>Membership</span> <span>Categories</span></h1>
                             </div>
                         </div>
                     </div>
@@ -22,27 +22,29 @@
         <section class="section team-member no-padding-bottom">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 col-xl-5">
-                        <div class="img-box"><img class="img--layout" src="img/about_layout-reverse.png" alt="img"/>
-                            <div class="img-box__img"><img class="img--bg" src="img/img_box-1.jpg" alt="img"/></div>
+                    @forelse ($categories as $category)
+                        <div class="col-lg-6 col-xl-6">
+                            <div class="heading heading--primary">
+                                <h2 class="heading__title"><span>{{$category->category}}</span></h2>
+
+                                <div>
+                                    {!! $category->description !!}
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-6 offset-xl-1">
-                        <div class="heading heading--primary"><span class="heading__pre-title">Community a Officer – Mr Charity</span>
-                            <h2 class="heading__title"><span>Eey Chie</span></h2>
-                            <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil expetendis in mei. Mei an pericula euripidis, hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix at, vel pertinax sensibus id, error epicurei mea et. Mea facilisis urbanitas moderatius id. Vis ei rationibus definiebas, eu qui purto zril laoreet. Ex error omnium interpretaris pro, alia illum ea vim. Lorem ipsum dolor sit amet, eu per legimus referrentur. Ius ne viris repudiare, nominavi sententiae eos in.</p>
-                            <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil expetendis in mei. Mei an pericula euripidis, hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix at, vel pertinax sensibus id, error epicurei mea et. Mea facilisis urbanitas moderatius id. Vis ei rationibus definiebas.</p>
-                        </div>
-                    </div>
+                    @empty
+                        <h2>Sorry!</h2>
+                        <h3>There are no Categories to display</h3>
+                    @endforelse
                 </div>
             </div>
         </section>
 
-        <section class="bottom-background background--brown">
+        <section class="bottom-background ">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="bottom-background__img"><img src="img/bottom-bg.png" alt="img"/></div>
+                        <div class="bottom-background__img"><img src="{{asset('site/img/bottom-bg.png')}}" alt="img"/></div>
                     </div>
                 </div>
             </div>

@@ -44,4 +44,12 @@ class MemberCategoryController extends Controller{
         return Response::redirectBack('success', 'Member Catergory Deleted');
     }
 
+    public function list(){
+        $categories = MemberCategory::where('status', true)->get();
+        return Response::view('membership-category', [
+            'siteName' => env('APP_NAME'),
+            'categories' => $categories
+        ]);
+    }
+
 }
