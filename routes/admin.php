@@ -11,6 +11,7 @@ use App\Http\Controllers\MembersBenefitController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -52,6 +53,17 @@ Route::middleware('auth:admin')->group(function(){
             Route::get('/delete', [TeamController::class, 'destroy']);
             Route::get('/status', [TeamController::class, 'status']);
             Route::post('/update', [TeamController::class, 'update']);
+        });
+    });
+
+    Route::prefix('testimonials')->group(function(){
+        Route::get('/', [TestimonialController::class, 'index']);
+        Route::post('/create', [TestimonialController::class, 'create']);
+
+        Route::prefix('/{id}')->group(function(){
+            Route::get('/delete', [TestimonialController::class, 'destroy']);
+            Route::get('/status', [TestimonialController::class, 'status']);
+            Route::post('/update', [TestimonialController::class, 'update']);
         });
     });
 

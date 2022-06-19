@@ -4,14 +4,14 @@
     <main class="main">
         <section class="promo-primary">
             <picture>
-                <source srcset="img/contacts.jpg" media="(min-width: 992px)"/><img class="img--bg" src="img/contacts.jpg" alt="img"/>
+                <source srcset="{{asset('site/img/contacts.jpg')}}" media="(min-width: 992px)"/><img class="img--bg" src="{{asset('site/img/contacts.jpg')}}" alt="img"/>
             </picture>
-            <div class="promo-primary__description"> <span>Compassion</span></div>
+            <div class="promo-primary__description"> <span>Contact Us</span></div>
             <div class="container">
                 <div class="row">
                     <div class="col-auto">
                         <div class="align-container">
-                            <div class="align-container__item"><span class="promo-primary__pre-title">Helpo</span>
+                            <div class="align-container__item"><span class="promo-primary__pre-title">{{env('SITE_NAME')}}</span>
                                 <h1 class="promo-primary__title"><span>Contacts</span></h1>
                             </div>
                         </div>
@@ -25,43 +25,47 @@
                 <div class="row offset-margin">
                     <div class="col-sm-6 col-lg-3">
                         <div class="icon-item">
-                            <div class="icon-item__img"><img class="img--layout" src="img/icon_1-1.png" alt="img"/>
+                            <div class="icon-item__img"><img class="img--layout" src="{{asset('site/img/icon_1-1.png')}}" alt="img"/>
                                 <svg class="icon icon-item__icon icon--red">
                                     <use xlink:href="#location-pin"></use>
                                 </svg>
                             </div>
                             <div class="icon-item__text">
-                                <p>Adress: Elliott Ave, Parkville VIC 3052, Melbourne Canada</p>
+                                <p>{{env('SITE_ADDRESS')}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-3">
                         <div class="icon-item">
-                            <div class="icon-item__img"><img class="img--layout" src="img/icon_2-2.png" alt="img"/>
+                            <div class="icon-item__img"><img class="img--layout" src="{{asset('site/img/icon_2-2.png')}}" alt="img"/>
                                 <svg class="icon icon-item__icon icon--orange">
                                     <use xlink:href="#phone-call"></use>
                                 </svg>
                             </div>
                             <div class="icon-item__text">
-                                <p>Phone: <a class="icon-item__link" href="tel:+31859644725">+ 31 85 964 47 25</a> <a class="icon-item__link" href="tel:+31859644725">+ 31 85 964 47 25</a></p>
+                                <p>
+                                    <a class="icon-item__link" href="tel:{{env('SITE_PHONE')}}">{{env('SITE_PHONE')}}</a>,
+                                    <a class="icon-item__link" href="tel:{{env('SITE_PHONE_TWO')}}">{{env('SITE_PHONE_TWO')}}</a></p>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-3">
                         <div class="icon-item">
-                            <div class="icon-item__img"><img class="img--layout" src="img/icon_3-3.png" alt="img"/>
+                            <div class="icon-item__img"><img class="img--layout" src="{{asset('site/img/icon_3-3.png')}}" alt="img"/>
                                 <svg class="icon icon-item__icon icon--green">
                                     <use xlink:href="#envelope"></use>
                                 </svg>
                             </div>
                             <div class="icon-item__text">
-                                <p>Email: <a class="icon-item__link" href="mailto:support@helpo.org">support@helpo.org</a></p>
+                                <p>
+                                    <a class="icon-item__link" href="mailto:{{env('SITE_EMAIL')}}">{{env('SITE_EMAIL')}}</a>
+                                </p>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-3">
                         <div class="icon-item">
-                            <div class="icon-item__img"><img class="img--layout" src="img/icon_4-4.png" alt="img"/>
+                            <div class="icon-item__img"><img class="img--layout" src="{{asset('site/img/icon_4-4.png')}}" alt="img"/>
                                 <svg class="icon icon-item__icon icon--blue">
                                     <use xlink:href="#share"></use>
                                 </svg>
@@ -123,7 +127,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="bottom-background__img"><img src="img/bottom-bg.png" alt="img"/></div>
+                        <div class="bottom-background__img"><img src="{{asset('site/img/bottom-bg.png')}}" alt="img"/></div>
                     </div>
                 </div>
             </div>

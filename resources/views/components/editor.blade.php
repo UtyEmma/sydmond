@@ -7,8 +7,6 @@
 @endpush
 
 @push('scripts')
-    <script src="{{asset('plugins/quill/quill.js')}}" ></script>
-
     <script>
         $(document).ready(() => {
             const textContentName = '#{{ $id."-content" ?? "text-content"}}'
@@ -38,11 +36,11 @@
                         // ['clean']
                     ],
                 },
-                placeholder: '{{$placeholder ?? "Compose an epic..."}}',
+                placeholder: '{{$placeholder ?? 'Compose an epic...'}}',
                 theme: 'snow'  // or 'bubble'
             });
             // console.log(quill.root)
-            quill.root.insertAdjacentHTML('afterbegin', "{!! $value ?? old($name) !!}")
+            quill.root.insertAdjacentHTML('afterbegin', '{!! $value ?? old($name) !!}')
             quill.on('text-change', function(delta, oldDelta, source) {
                 $(textContentName).val(quill.root.innerHTML)
             });

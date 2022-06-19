@@ -21,28 +21,25 @@
         </section>
         <!-- gallery start-->
         <section class="section gallery">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <!-- filter panel start-->
-                        <ul class="filter-panel">
-                            <li class="filter-panel__item filter-panel__item--active" data-filter="*"><span>All Causes</span></li>
-                            <li class="filter-panel__item" data-filter=".category_1"><span>Water Delivery</span></li>
-                        </ul>
-                        <!-- filter panel end-->
-                    </div>
-                </div>
-            </div>
             <div class="row no-gutters gallery-masonry">
-                <div class="col-6 col-md-4 gallery-masonry__item category_1">
-                    <a class="gallery-masonry__img gallery-masonry__item--height-2" href="img/gallery_1.jpg" data-fancybox="gallery"><img class="img--bg" src="img/gallery_1.jpg" alt="img"/>
-                        <h6 class="gallery-masonry__description">He Need Your Protection</h6>
-                    </a>
-                </div>
+                @forelse ($gallery as $image)
+                    <div class="col-6 col-md-4 gallery-masonry__item category_1">
+                        <a class="gallery-masonry__img gallery-masonry__item--height-2" href="{{asset($image->image)}}" data-fancybox="gallery"><img class="img--bg" src="{{asset($image->image)}}" alt="img"/>
+                            <h6 class="gallery-masonry__description">
+                                {{$image->title}}
+                                <p style="font-size: 14px; font-weight: normal;">{{$image->description}}</p>
+                            </h6>
+                        </a>
+                    </div>
+                @empty
+                    <x-notfound item="Images" />
+                @endforelse
             </div>
             <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center"><a class="button gallery__button button--primary" href="#">More Images</a></div>
+                <div class="mt-4 d-flex justify-content-center">
+                    <div>
+                        {{$gallery->links()}}
+                    </div>
                 </div>
             </div>
         </section>
@@ -52,7 +49,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="bottom-background__img"><img src="img/bottom-bg.png" alt="img"/></div>
+                        <div class="bottom-background__img"><img src="{{asset('site/img/bottom-bg.png')}}" alt="img"/></div>
                     </div>
                 </div>
             </div>

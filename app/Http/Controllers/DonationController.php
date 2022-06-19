@@ -66,4 +66,10 @@ class DonationController extends Controller{
         }
     }
 
+    function donors(){
+        return Response::view('donors', [
+            'siteName' => env('APP_NAME')
+        ]);
+    }
+
 }

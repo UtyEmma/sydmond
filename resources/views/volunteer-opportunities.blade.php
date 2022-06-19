@@ -4,7 +4,7 @@
     <main class="main">
         <section class="promo-primary">
             <picture>
-                <source srcset="img/volunteer.jpg" media="(min-width: 992px)"/><img class="img--bg" src="img/volunteer.jpg" alt="img"/>
+                <source srcset="{{asset('site/img/volunteer.jpg')}}" media="(min-width: 992px)"/><img class="img--bg" src="{{asset('site/img/volunteer.jpg')}}" alt="img"/>
             </picture>
             <div class="promo-primary__description"> <span>Compassion</span></div>
             <div class="container">
@@ -24,8 +24,8 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-xl-5">
-                        <div class="img-box"><img class="img--layout" src="img/about_layout-reverse.png" alt="img"/>
-                            <div class="img-box__img"><img class="img--bg" src="img/img_box-1.jpg" alt="img"/></div>
+                        <div class="img-box"><img class="img--layout" src="{{asset('site/img/about_layout-reverse.png')}}" alt="img"/>
+                            <div class="img-box__img"><img class="img--bg" src="{{asset('site/img/img_box-1.jpg')}}" alt="img"/></div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-xl-6 offset-xl-1">
@@ -55,18 +55,18 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <!-- user form start-->
-                        <form class="form user-form" action="javascript:void(0);">
+                        <form class="form user-form" action="/membership-apply"  method="POST">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <input class="form__field" type="text" name="first-name" placeholder="First Name"/>
+                                    <input class="form__field" type="text" name="name" placeholder="First Name"/>
                                     <input class="form__field" type="email" name="email" placeholder="E-mail"/>
-                                    <input class="form__field" type="tel" name="phone-number" placeholder="Phone Number"/>
-                                    <input class="form__field" type="number" name="date-of-birth" placeholder="Date of Birth"/>
-                                    <input class="form__field" type="tel" name="adress" placeholder="Adress"/>
+                                    <input class="form__field" type="tel" name="phone" placeholder="Phone Number"/>
                                 </div>
+                                <input type="text" value="volunteer" name="type" hidden readonly>
                                 <div class="col-lg-6">
-                                    <textarea class="form__field form__message" name="message" placeholder="About Occupation"></textarea>
+                                    <input class="form__field" type="date" name="dob" placeholder="Date of Birth"/>
+                                    <input class="form__field" type="tel" name="address" placeholder="Address"/>
+                                    <input class="form__field" name="occupation" placeholder="Occupation" />
                                 </div>
                             </div>
                             <div class="row">
@@ -75,10 +75,9 @@
                                 </div>
                             </div>
                         </form>
-                        <!-- user form end-->
                     </div>
                 </div>
-            </div><img class="forms-section__bg" src="img/volunteer-2.png" alt="img"/>
+            </div><img class="forms-section__bg" src="{{asset('site/img/volunteer-2.png')}}" alt="img"/>
         </section>
         <!-- section end-->
     </main>

@@ -33,9 +33,9 @@ Route::prefix('donate')->group(function(){
     Route::post('/pay', [DonationController::class, 'initiate']);
     Route::get('/complete', [DonationController::class, 'verify']);
     Route::get('/invoice', [DonationController::class, 'downloadInvoice']);
-    Route::get('/show-invoice', function(){
-        return view('components.invoice');
-    });
+    // Route::get('/show-invoice', function(){
+    //     return view('components.invoice');
+    // });
 });
 
 Route::get('/benefits-of-members', [MembersBenefitController::class, 'list']);
@@ -45,5 +45,6 @@ Route::get('/volunteer-opportunities', [TeamController::class, 'volunteers']);
 Route::get('/membership-application-form', [TeamController::class, 'membershipApplication']);
 
 Route::post('membership-apply', [TeamController::class, 'membershipApply']);
-Route::post('volunteer-apply', [TeamController::class, 'membershipApply']);
+Route::get('donors', [DonationController::class, 'donors']);
+Route::get('contact', [PageController::class, 'contact']);
 

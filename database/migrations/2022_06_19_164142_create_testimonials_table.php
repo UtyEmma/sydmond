@@ -13,15 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('contents', function (Blueprint $table) {
+        Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
-            $table->text('vision')->nullable();
-            $table->text('goal')->nullable();
-            $table->text('mission')->nullable();
-            $table->text('motto')->nullable();
-            $table->longText('about')->nullable();
-            $table->longText('history')->nullable();
-            $table->longText('objectives')->nullable();
+            $table->string('name');
+            $table->text('message');
+            $table->string('occupation')->nullable();
+            $table->string('image')->nullable();
+            $table->boolean('status');
             $table->timestamps();
         });
     }
@@ -33,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contents');
+        Schema::dropIfExists('testimonials');
     }
 };

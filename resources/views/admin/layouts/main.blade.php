@@ -43,6 +43,7 @@
         <script src="{{asset('plugins/simple-notify/simple-notify.min.js')}}"></script>
 
         <script src="{{asset('plugins/form-repeater/jquery-repeater.min.js')}}"></script>
+        <script src="{{asset('plugins/quill/quill.js')}}" ></script>
 
         @stack('scripts')
 

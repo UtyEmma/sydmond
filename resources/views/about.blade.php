@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-auto">
                         <div class="align-container">
-                            <div class="align-container__item"><span class="promo-primary__pre-title">Helpo</span>
+                            <div class="align-container__item"><span class="promo-primary__pre-title">{{env('APP_NAME')}}</span>
                                 <h1 class="promo-primary__title"><span>About</span><br/><span>Organization</span></h1>
                             </div>
                         </div>
@@ -29,12 +29,12 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-xl-6 offset-xl-1">
-                        <div class="heading heading--primary"><span class="heading__pre-title">About Us</span>
-                            <h2 class="heading__title"><span>Help is Our</span> <span>Main Goal</span></h2>
+                        <h2 class="heading__title">About Us</h2>
+                        <div class="heading heading--primary"><span class="heading__pre-title">{!! $about->vision ?? 'Helping less privileged, children and elderly.' !!}</span>
                         </div>
-                        <p><strong>Thresher shark rudd African lungfish silverside, Red salmon rockfish grunion, garpike zebra danio king-of-the-salmon banjo catfish."</strong></p>
-                        <p>Sea chub demoiselle whalefish zebra lionfish mud cat pelican eel. Minnow snoek icefish velvet-belly shark, California halibut round stingray northern sea robin. Southern grayling trout-perch</p>
-                        <p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail, Canthigaster rostrata. Midshipman dartfish Modoc sucker, yellowtail kingfish basslet. Buri chimaera triplespine northern sea robin zingel lancetfish galjoen fish, catla wolffish, mosshead warbonnet</p>
+                        {!! $about->about ?? "Sydmond Foundation is all about empowering, improving and inspiring hope of individuals especially the underprivileged people, children and elderly.
+                        We discover the children, save the Child, give them hope to attain her destiny.
+                        " !!}
                     </div>
                 </div>
             </div>
@@ -45,9 +45,10 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <h4 class="about-us__subtitle">We work around the globe to save lives, defeat poverty and achieve social justice.</h4>
-                        <p>Sea chub demoiselle whalefish zebra lionfish mud cat pelican eel. Minnow snoek icefish velvet-belly shark, California halibut round stingray northern sea robin. Southern grayling trout-perchSharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail, Canthigaster rostrata.</p>
-                        <p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail, Canthigaster rostrata. Midshipman dartfish Modoc sucker, yellowtail kingfish basslet. Buri chimaera triplespine northern </p>
+                        <h4 class="about-us__subtitle">{!! $about->mission ?? "To help improve and inspire hope of individuals and improve quality care for the underprivileged people particularly children and elderly." !!}</h4>
+                        {!! $about->history ?? "Sydmond foundation was established on 28th February, 2010 with the sole aim of empowering, improving and inspiring hope of individual especially under privilege people, children and elderly.
+                        The foundation was registered in 2012 with corporate affairs commission (CAC). In has gone a long way in bringing and carrying the needs of the underprivileged by providing them with their basic needs, supporting the children academically as they are the future of the people and world at large.
+                        " !!}
                     </div>
                     <div class="col-lg-6 col-xl-5 offset-xl-1">
                         <div class="about-us__text-aside">Our Mission</div>
@@ -56,66 +57,6 @@
             </div>
         </section>
         <!-- about us style-2 end-->
-        <!-- video block start-->
-        <section class="section video-block no-padding-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="video-frame"><img class="img--bg" src="{{asset('site/img/video_frame.png')}}" alt="frame"/><a class="video-trigger video-frame__trigger" href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"><span class="video-frame__icon"><i class="fa fa-play" aria-hidden="true"></i></span><span class="video-frame__text">Watch our video</span></a><img class="video-frame__img-layout" src="{{asset('site/img/video_frame-layout.png')}}" alt="layout"/></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- video block end-->
-        <!-- statistics start-->
-        <section class="section statistics no-padding-top">
-            <div class="container">
-                <div class="row margin-bottom">
-                    <div class="col-12">
-                        <div class="heading heading--primary heading--center"><span class="heading__pre-title">What we Do</span>
-                            <h2 class="heading__title no-margin-bottom"><span>Our</span> <span>Statistics</span></h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row offset-margin">
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="icon-item">
-                            <div class="icon-item__img">
-                                <img class="img--layout" src="{{asset('site/img/icon_1.png')}}" alt="img"/><span class="js-counter">20</span>
-                            </div>
-                            <div class="icon-item__text">
-                                <p>Years of Experience</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="icon-item">
-                            <div class="icon-item__img"><img class="img--layout" src="{{asset('site/img/icon_2.png')}}" alt="img"/><span class="js-counter">32</span></div>
-                            <div class="icon-item__text">
-                                <p>Country</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="icon-item">
-                            <div class="icon-item__img"><img class="img--layout" src="{{asset('site/img/icon_3.png')}}" alt="img"/><span class="js-counter">200 </span><span>+</span></div>
-                            <div class="icon-item__text">
-                                <p>Thousand People Helped</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="icon-item">
-                            <div class="icon-item__img"><img class="img--layout" src="{{asset('site/img/icon_4.png')}}" alt="img"/><span class="js-counter">65 </span><span>b</span></div>
-                            <div class="icon-item__text">
-                                <p>Dollars We Collected				</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- statistics end-->
         <!-- team start-->
         <section class="section team">
             <div class="container">

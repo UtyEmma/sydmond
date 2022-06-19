@@ -43,7 +43,7 @@
         </div>
         <div class="aside-dropdown__item">
             <div class="aside-inner"><span class="aside-inner__title">Email</span><a class="aside-inner__link" href="mailto:{{env('SITE_EMAIL')}}">{{env('SITE_EMAIL')}}</a></div>
-            <div class="aside-inner"><span class="aside-inner__title">Phone numbers</span><a class="aside-inner__link" href="tel:{{env('SITE_PHONE')}}">{{env('SITE_PHONE')}}</a><a class="aside-inner__link" href="tel:{{env('SITE_PHONE')}}">{{env('SITE_PHONE')}}</a></div>
+            <div class="aside-inner"><span class="aside-inner__title">Phone numbers</span><a class="aside-inner__link" href="tel:{{env('SITE_PHONE')}}">{{env('SITE_PHONE')}}</a><a class="aside-inner__link" href="tel:{{env('SITE_PHONE_TWO')}}">{{env('SITE_PHONE_TWO')}}</a></div>
             <ul class="aside-socials">
                 <li class="aside-socials__item"><a class="aside-socials__link" href="https://instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                 <li class="aside-socials__item"><a class="aside-socials__link aside-socials__link--active" href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
