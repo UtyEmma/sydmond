@@ -24,8 +24,8 @@
                             <li class="footer-menu__item"><a class="footer-menu__link" href="/contact">Contact Us</a></li>
                             <li class="footer-menu__item"><a class="footer-menu__link" href="/faq">Pages</a></li>
                             <li class="footer-menu__item"><a class="footer-menu__link" href="/gallery">Gallery</a></li>
-                            <li class="footer-menu__item"><a class="footer-menu__link" href="/membership">Membership</a></li>
-                            <li class="footer-menu__item"><a class="footer-menu__link" href="/programmes">Programmes</a></li>
+                            <li class="footer-menu__item"><a class="footer-menu__link" href="/membership-application-form">Membership</a></li>
+                            {{-- <li class="footer-menu__item"><a class="footer-menu__link" href="/programmes">Programmes</a></li> --}}
                         </ul>
                     </nav>
                 </div>

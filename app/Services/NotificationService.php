@@ -2,7 +2,9 @@
 
 namespace App\Services;
 
+use App\Mail\GeneralMail;
 use App\Notifications\GeneralNotification;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Notification;
 
 class NotificationService {
@@ -31,9 +33,9 @@ class NotificationService {
         ];
     }
 
-    function send($receivers, $channels){
+    function send($receivers, $channels, $meta = []){
         $data = array_merge($this->toArray($this->subject), $this->data);
-        Notification::send($receivers, new GeneralNotification($this->subject, $channels, $this->message, $data));
+        Notification::send($receivers, new GeneralNotification($this->subject, $channels, $this->message, $data, $meta));
     }
 
     function text($text){
@@ -72,6 +74,10 @@ class NotificationService {
     function greeting($greeting){
         $this->parse('greeting', $greeting);
         return $this;
+    }
+
+    function mail($receivers, $from){
+        return Mail::to($receivers)->send(new GeneralMail($this->subject, $this->message));
     }
 }
 

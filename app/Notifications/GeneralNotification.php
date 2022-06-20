@@ -14,11 +14,12 @@ class GeneralNotification extends Notification {
     private $channels;
     private $message;
 
-    public function __construct($subject, $channels, $message, $data){
+    public function __construct($subject, $channels, $message, $data, $meta){
         $this->subject = $subject;
         $this->channels = $channels;
         $this->message = $message;
         $this->data = $data;
+        $this->meta = $meta;
     }
 
     /**
@@ -39,6 +40,7 @@ class GeneralNotification extends Notification {
      */
     public function toMail($notifiable){
         return (new MailMessage)
+                        ->from($this->meta['from'] ?? env('MAIL_FROM_ADDRESS'))
                         ->subject($this->subject)
                         ->view('emails.general', [
                             'details' => $this->message,

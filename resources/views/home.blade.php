@@ -175,58 +175,12 @@
             </section>
             <!-- blog end-->
         @endif
-        <!-- donors start-->
-        <section class="section donors">
-            <div class="container">
-                <div class="row margin-bottom">
-                    <div class="col-12">
-                        <div class="heading heading--primary heading--center"><span class="heading__pre-title">Donors</span>
-                            <h2 class="heading__title no-margin-bottom"><span>Who Help</span> <span>Us</span></h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <!-- donors slider start-->
-                        <div class="slider-holder">
-                            <div class="donors-slider donors-slider--style-1">
-                                <div class="donors-slider__item">
-                                    <div class="donors-slider__img"><img src="{{asset('site/img/donor_1.png')}}" alt="donor"/></div>
-                                </div>
-                                <div class="donors-slider__item">
-                                    <div class="donors-slider__img"><img src="{{asset('site/img/donor_2.png')}}" alt="donor"/></div>
-                                </div>
-                                <div class="donors-slider__item">
-                                    <div class="donors-slider__img"><img src="{{asset('site/img/donor_3.png')}}" alt="donor"/></div>
-                                </div>
-                                <div class="donors-slider__item">
-                                    <div class="donors-slider__img"><img src="{{asset('site/img/donor_4.png')}}" alt="donor"/></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- donors slider end-->
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- donors end-->
 
-        <!-- subscribe start-->
-        <section class="subscribe">
-            <div class="container">
-                <div class="row align-items-end">
-                    <div class="col-lg-4">
-                        <h2 class="subscribe__title">Subscribe.</h2>
-                    </div>
-                    <div class="col-lg-8">
-                        <form class="subscribe-form" action="javascript:void(0);">
-                            <input class="subscribe-form__input" type="email" name="email" placeholder="Enter your E-mail" required="required"/>
-                            <input class="subscribe-form__submit" type="submit" value="Submit"/>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- subscribe end-->
+
+        @if ($donors->count())
+            @include('components.sections.donors')
+        @endif
+
+
     </main>
 </x-layout.index>

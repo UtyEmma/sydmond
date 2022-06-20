@@ -75,8 +75,10 @@ class DonationController extends Controller{
     }
 
     function donors(){
+        $donors = Donor::paginate(9);
         return Response::view('donors', [
-            'siteName' => env('APP_NAME')
+            'siteName' => env('APP_NAME'),
+            'donors' => $donors
         ]);
     }
 

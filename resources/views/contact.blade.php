@@ -92,23 +92,25 @@
                 <div class="container">
                     <div class="row justify-content-end">
                         <div class="col-xl-6">
-                            <form class="form message-form" action="javascript:void(0);">
+                            <form class="form message-form" action="/contact" method="POST">
+                                @csrf
                                 <h6 class="form__title">Send Message</h6><span class="form__text">* The following info is required</span>
                                 <div class="row">
-                                    <div class="col-lg-6">
-                                        <input class="form__field" type="text" name="first-name" placeholder="First Name *" required="required"/>
+                                    <div class="col-lg-12">
+                                        <input class="form__field" type="text" name="name" placeholder="Your Name *" required="required"/>
+                                        <x-errors name="name" />
                                     </div>
                                     <div class="col-lg-6">
-                                        <input class="form__field" type="text" name="last-name" placeholder="Last Name *" required="required"/>
+                                        <input class="form__field" type="email" name="email" placeholder="Your Email Address*" required="required"/>
+                                        <x-errors name="email" />
                                     </div>
                                     <div class="col-lg-6">
-                                        <input class="form__field" type="email" name="email" placeholder="Email *" required="required"/>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <input class="form__field" type="tel" name="phone-number" placeholder="Phone"/>
+                                        <input class="form__field" type="tel" name="phone" placeholder="Your Phone Number"/>
+                                        <x-errors name="phone" />
                                     </div>
                                     <div class="col-12">
                                         <textarea class="form__message form__field" name="message" placeholder="Message"></textarea>
+                                        <x-errors name="message" />
                                     </div>
                                     <div class="col-12">
                                         <button class="form__submit" type="submit">Send Message</button>

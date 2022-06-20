@@ -23,7 +23,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-12">
-                        <div class="heading heading--primary"><span class="heading__pre-title">Community a Officer – Mr Charity</span>
+                        <div class="heading heading--primary"><span class="heading__pre-title">Appy to Join {{env('SITE_NAME')}}</span>
                             <h2 class="heading__title"><span>Application Form</span></h2>
                             <form class="form user-form" action="/membership-apply"  method="POST">
                                 <div class="row">

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SendMessageRequest;
 use App\Library\Response;
+use App\Models\Admin;
 use App\Models\Content;
+use App\Models\Donor;
 use App\Models\Event;
 use App\Models\Faq;
 use App\Models\Gallery;
@@ -11,6 +14,7 @@ use App\Models\Post;
 use App\Models\Program;
 use App\Models\Team;
 use App\Models\Testimonial;
+use App\Services\NotificationService;
 use Illuminate\Http\Request;
 
 class PageController extends Controller{
@@ -21,13 +25,15 @@ class PageController extends Controller{
         $content = Content::first();
         $testimonials = Testimonial::where('status', true)->limit(4)->get();
         $events = Event::where('status', true)->limit(3)->get();
+        $donors = Donor::limit(6)->get();
 
         return Response::view('home', [
             'programs' => $programs,
             'content' => $content,
             'posts' => $posts,
             'testimonials' => $testimonials,
-            'events' => $events
+            'events' => $events,
+            'donors' => $donors
         ]);
     }
 
@@ -69,4 +75,15 @@ class PageController extends Controller{
         ]);
     }
 
+    function sendMessage(SendMessageRequest $request, NotificationService $notificationService){
+        // dd($request->email);
+        $notificationService
+                    ->subject('Attention Required! New Message from '.$request->name)
+                    ->text("You have a new Message from <strong>$request->name</strong>")
+                    ->text("<strong>Message:</strong> <p>$request->message</p>")
+                    ->text("<strong>Phone Number:</strong> <p>$request->phone</p>")
+                    ->mail([env('SITE_EMAIL')], $request->email);
+
+        return Response::redirectBack('success', "Your Message has been sent");
+    }
 }

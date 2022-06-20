@@ -8,6 +8,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\TeamController;
+use App\Library\Response;
 use Illuminate\Support\Facades\Route;
 
 
@@ -47,4 +48,15 @@ Route::get('/membership-application-form', [TeamController::class, 'membershipAp
 Route::post('membership-apply', [TeamController::class, 'membershipApply']);
 Route::get('donors', [DonationController::class, 'donors']);
 Route::get('contact', [PageController::class, 'contact']);
+Route::post('contact', [PageController::class, 'sendMessage']);
+Route::get('terms', function(){
+    return Response::view('terms', [
+        'siteName' => env('SITE_NAME')
+    ]);
+});
+Route::get('policy', function(){
+    return Response::view('policy', [
+        'siteName' => env('SITE_NAME')
+    ]);
+});
 
