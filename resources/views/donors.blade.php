@@ -4,7 +4,8 @@
     <main class="main">
         <section class="promo-primary">
             <picture>
-                <source srcset="img/donors.jpg" media="(min-width: 992px)"/><img class="img--bg" src="img/donors.jpg" alt="img"/>
+                <source srcset="{{asset('site/img/donors.jpg')}}" media="(min-width: 992px)"/>
+                <img class="img--bg" src="{{asset('site/img/donors.jpg')}}" alt="img"/>
             </picture>
             <div class="promo-primary__description"> <span>Mercy</span></div>
             <div class="container">
@@ -20,7 +21,7 @@
             </div>
         </section>
         <!-- donors inner start-->
-        <section class="section donors-inner"><img class="donors-inner__bg" src="img/donors_inner.png" alt="img"/>
+        <section class="section donors-inner"><img class="donors-inner__bg" src="{{asset('site/img/donors_inner.png')}}" alt="img"/>
             <div class="container">
                 <div class="row margin-bottom">
                     <div class="col-12">
@@ -36,28 +37,28 @@
                         <div class="slider-holder">
                             <div class="donors-slider donors-slider--style-2 offset-margin">
                                 <div class="donors-slider__item">
-                                    <div class="donors-slider__img"><img src="img/donor_1.png" alt="donor"/></div>
+                                    <div class="donors-slider__img"><img src="{{asset('site/img/donor_1.png')}}" alt="donor"/></div>
                                 </div>
                                 <div class="donors-slider__item">
-                                    <div class="donors-slider__img"><img src="img/donor_2.png" alt="donor"/></div>
+                                    <div class="donors-slider__img"><img src="{{asset('site/img/donor_2.png')}}" alt="donor"/></div>
                                 </div>
                                 <div class="donors-slider__item">
-                                    <div class="donors-slider__img"><img src="img/donor_3.png" alt="donor"/></div>
+                                    <div class="donors-slider__img"><img src="{{asset('site/img/donor_3.png')}}" alt="donor"/></div>
                                 </div>
                                 <div class="donors-slider__item">
-                                    <div class="donors-slider__img"><img src="img/donor_4.png" alt="donor"/></div>
+                                    <div class="donors-slider__img"><img src="{{asset('site/img/donor_4.png')}}" alt="donor"/></div>
                                 </div>
                                 <div class="donors-slider__item">
-                                    <div class="donors-slider__img"><img src="img/donor_5.png" alt="donor"/></div>
+                                    <div class="donors-slider__img"><img src="{{asset('site/img/donor_5.png')}}" alt="donor"/></div>
                                 </div>
                                 <div class="donors-slider__item">
-                                    <div class="donors-slider__img"><img src="img/donor_6.png" alt="donor"/></div>
+                                    <div class="donors-slider__img"><img src="{{asset('site/img/donor_6.png')}}" alt="donor"/></div>
                                 </div>
                                 <div class="donors-slider__item">
-                                    <div class="donors-slider__img"><img src="img/donor_7.png" alt="donor"/></div>
+                                    <div class="donors-slider__img"><img src="{{asset('site/img/donor_7.png')}}" alt="donor"/></div>
                                 </div>
                                 <div class="donors-slider__item">
-                                    <div class="donors-slider__img"><img src="img/donor_8.png" alt="donor"/></div>
+                                    <div class="donors-slider__img"><img src="{{asset('site/img/donor_8.png')}}" alt="donor"/></div>
                                 </div>
                             </div>
                         </div>

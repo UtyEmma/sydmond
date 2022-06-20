@@ -2,30 +2,30 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-lg-4">
-                    <div class="footer-logo"><a class="footer-logo__link" href="./"><img class="footer-logo__img" src="{{asset('site/img/logo_white.png')}}" alt="logo"/></a></div>
+                    <div class="footer-logo"><a class="footer-logo__link" href="/"><img class="footer-logo__img" src="{{asset('site/img/logo_white.png')}}" alt="logo"/></a></div>
                     <div class="footer-contacts">
                         <p class="footer-contacts__address">{{env('APP_NAME')}}</p>
                         <p class="footer-contacts__phone">Phone: <a href="tel:{{env('SITE_PHONE')}}">{{env('SITE_PHONE')}}</a></p>
                         <p class="footer-contacts__mail">Email: <a href="mailto:{{env('SITE_EMAIL')}}">{{env('SITE_EMAIL')}}</a></p>
                     </div>
                     <ul class="footer-socials">
-                        <li class="footer-socials__item"><a class="footer-socials__link" href="https://facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li class="footer-socials__item"><a class="footer-socials__link" href="https://twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li class="footer-socials__item"><a class="footer-socials__link" href="https://instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li class="footer-socials__item"><a class="footer-socials__link" href="{{env('FACEBOOK')}}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li class="footer-socials__item"><a class="footer-socials__link" href="{{env('TWITTER')}}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li class="footer-socials__item"><a class="footer-socials__link" href="{{env('INSTAGRAM')}}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
                 <div class="col-sm-6 col-lg-4 col-xl-3 offset-xl-1">
                     <h6 class="footer__title">Menu & Links</h6>
                     <nav>
                         <ul class="footer-menu">
-                            <li class="footer-menu__item footer-menu__item--active"><a class="footer-menu__link" href="./">Home</a></li>
-                            <li class="footer-menu__item"><a class="footer-menu__link" href="news">Events & News</a></li>
-                            <li class="footer-menu__item"><a class="footer-menu__link" href="about">About Us</a></li>
-                            <li class="footer-menu__item"><a class="footer-menu__link" href="contact">Contact Us</a></li>
-                            <li class="footer-menu__item"><a class="footer-menu__link" href="faq">Pages</a></li>
-                            <li class="footer-menu__item"><a class="footer-menu__link" href="gallery">Gallery</a></li>
-                            <li class="footer-menu__item"><a class="footer-menu__link" href="membership">Membership</a></li>
-                            <li class="footer-menu__item"><a class="footer-menu__link" href="programmes">Programmes</a></li>
+                            <li class="footer-menu__item footer-menu__item--active"><a class="footer-menu__link" href="/">Home</a></li>
+                            <li class="footer-menu__item"><a class="footer-menu__link" href="/news">Events & News</a></li>
+                            <li class="footer-menu__item"><a class="footer-menu__link" href="/about">About Us</a></li>
+                            <li class="footer-menu__item"><a class="footer-menu__link" href="/contact">Contact Us</a></li>
+                            <li class="footer-menu__item"><a class="footer-menu__link" href="/faq">Pages</a></li>
+                            <li class="footer-menu__item"><a class="footer-menu__link" href="/gallery">Gallery</a></li>
+                            <li class="footer-menu__item"><a class="footer-menu__link" href="/membership">Membership</a></li>
+                            <li class="footer-menu__item"><a class="footer-menu__link" href="/programmes">Programmes</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -33,7 +33,7 @@
                     <h6 class="footer__title">Newsletter</h6>
                     <div class="footer__form">
                         <p>Help someone today. Donate to save a life.</p>
-                        <a href="donate"><button class="footer__form-submit button button--primary" type="submit">Donate</button></a>
+                        <a href="/donate"><button class="footer__form-submit button button--primary" >Donate</button></a>
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                     <p class="footer-copyright">© 2022 {{env('SITE_NAME')}}. All Right Reserved</p>
                 </div>
                 <div class="col-md-6">
-                    <div class="footer-privacy"><a class="footer-privacy__link" href="policy">Privacy Policy</a><span class="footer-privacy__divider">|</span><a class="footer-privacy__link" href="terms">Term and Conditions</a></div>
+                    <div class="footer-privacy"><a class="footer-privacy__link" href="/policy">Privacy Policy</a><span class="footer-privacy__divider">|</span><a class="footer-privacy__link" href="/terms">Term and Conditions</a></div>
                 </div>
             </div>
         </div>

@@ -28,6 +28,19 @@
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#post-basic" aria-controls="post-basic">
               <i class="mdi mdi-circle-outline menu-icon"></i>
+              <span class="menu-title">Donations</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="post-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/donations">View Donations</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/donors">Donors</a></li>
+              </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#post-basic" aria-controls="post-basic">
+              <i class="mdi mdi-circle-outline menu-icon"></i>
               <span class="menu-title">Posts</span>
               <i class="menu-arrow"></i>
             </a>

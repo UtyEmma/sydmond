@@ -21,7 +21,7 @@
                                         <div class="promo-slider__wrapper-2">
                                             <p class="promo-slider__subtitle">Gray eel-catfish longnose whiptail catfish smalleye squaretail queen danio unicorn fish shortnose greeneye fusilier fish silver carp nibbler sharksucker tench lookdown catfish</p>
                                         </div>
-                                        <div class="promo-slider__wrapper-3"><a class="button promo-slider__button button--primary" href="#">Discover</a></div>
+                                        <div class="promo-slider__wrapper-3"><a class="button promo-slider__button button--primary" href="/about">Discover</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -79,10 +79,9 @@
             </div>
             <!-- promo socials start-->
             <ul class="promo-socials">
-                <li class="promo-socials__item"><a class="promo-socials__link" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                <li class="promo-socials__item"><a class="promo-socials__link" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                <li class="promo-socials__item"><a class="promo-socials__link" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li class="promo-socials__item"><a class="promo-socials__link" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li class="promo-socials__item"><a class="promo-socials__link" href="{{env('INSTAGRAM')}}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li class="promo-socials__item"><a class="promo-socials__link" href="{{env('TWITTER')}}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li class="promo-socials__item"><a class="promo-socials__link" href="{{env('FACEBOOK')}}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
             </ul>
             <!-- promo socials end-->
             <!-- promo pannel start-->
@@ -117,7 +116,7 @@
                         <div class="heading heading--primary"><span class="heading__pre-title">About Us</span>
                             <h2 class="heading__title">{!! $content->vision ?? '' !!}</h2>
                         </div>
-                        <p>{!! $content->about ?? "" !!}</p><a class="button button--primary" href="/about">More About</a>
+                        <p>{!! $content->about ?? "" !!}</p><a class="button button--primary" href="/about">Learn More</a>
                     </div>
                     <div class="col-lg-6 col-xl-5 offset-xl-1">
                         <div class="info-box">
@@ -137,7 +136,7 @@
         @if ($events->count())
             @include('components.sections.events')
         @endif
-        <!-- text section start-->
+
         <section class="section text-section"><img class="text-section__bg" src="{{asset('site/img/text-section.png')}}" alt="img"/>
             <div class="container">
                 <div class="row">
@@ -153,9 +152,10 @@
                 </div>
             </div>
         </section>
-        <!-- text section end-->
 
-        @include('components.sections.testimonials')
+        @if ($testimonials->count())
+            @include('components.sections.testimonials')
+        @endif
 
         <!-- blog start-->
         @if ($posts->isNotEmpty())
@@ -176,7 +176,7 @@
             <!-- blog end-->
         @endif
         <!-- donors start-->
-        <section class="section donors no-padding-top">
+        <section class="section donors">
             <div class="container">
                 <div class="row margin-bottom">
                     <div class="col-12">

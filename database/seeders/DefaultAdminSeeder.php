@@ -23,7 +23,7 @@ class DefaultAdminSeeder extends Seeder{
         $unique_id = Token::unique('admins');
         $password = "admin@1234";
         $email = 'admin@sydmond.com';
-        $name = 'John Grisham';
+        $name = 'Sydmong Foundation';
 
         if(!$admin = Admin::where('email', $email)->first()){
             $admin = Admin::create([

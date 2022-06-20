@@ -32,10 +32,10 @@ Route::prefix('donate')->group(function(){
     Route::get('/', [DonationController::class, 'index']);
     Route::post('/pay', [DonationController::class, 'initiate']);
     Route::get('/complete', [DonationController::class, 'verify']);
-    Route::get('/invoice', [DonationController::class, 'downloadInvoice']);
-    // Route::get('/show-invoice', function(){
-    //     return view('components.invoice');
-    // });
+    Route::get('/invoice/{donation_id}', [DonationController::class, 'downloadInvoice']);
+    Route::get('/show-invoice', function(){
+        return view('components.invoice');
+    });
 });
 
 Route::get('/benefits-of-members', [MembersBenefitController::class, 'list']);

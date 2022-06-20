@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\ContentController;
 use App\Http\Controllers\Admin\FAQController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\PagesController;
+use App\Http\Controllers\DonationController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\MemberCategoryController;
 use App\Http\Controllers\MembersBenefitController;
@@ -75,6 +76,19 @@ Route::middleware('auth:admin')->group(function(){
             Route::get('/delete', [MembersBenefitController::class, 'destroy']);
             Route::get('/status', [MembersBenefitController::class, 'status']);
             Route::post('/update', [MembersBenefitController::class, 'update']);
+        });
+    });
+
+    Route::get('/donations', [DonationController::class, 'donations']);
+
+    Route::prefix('donors')->group(function(){
+        Route::get('/', [DonationController::class, 'list']);
+        Route::post('/create', [DonationController::class, 'create']);
+
+        Route::prefix('/{id}')->group(function(){
+            Route::get('/delete', [DonationController::class, 'destroy']);
+            Route::get('/status', [DonationController::class, 'status']);
+            Route::post('/update', [DonationController::class, 'update']);
         });
     });
 
