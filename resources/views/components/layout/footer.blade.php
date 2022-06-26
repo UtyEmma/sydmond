@@ -30,7 +30,7 @@
                     </nav>
                 </div>
                 <div class="col-lg-4 col-xl-3 offset-xl-1">
-                    <h6 class="footer__title">Newsletter</h6>
+                    <h6 class="footer__title">Make a donation</h6>
                     <div class="footer__form">
                         <p>Help someone today. Donate to save a life.</p>
                         <a href="/donate"><button class="footer__form-submit button button--primary" >Donate</button></a>

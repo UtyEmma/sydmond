@@ -145,3 +145,7 @@ tr:hover .cut { opacity: 1; }
 }
 
 @page { margin: 0; }
+
+table, tr, td{
+    border: 0 !important;
+}

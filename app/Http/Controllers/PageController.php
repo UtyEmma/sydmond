@@ -40,10 +40,12 @@ class PageController extends Controller{
     function about(){
         $about = Content::first();
         $team = Team::where('type', 'management')->get();
+        $donors = Donor::limit(9)->get();
 
         return Response::view('about', [
             'about' => $about,
-            'team' => $team
+            'team' => $team,
+            'donors' => $donors
         ]);
     }
 
@@ -70,15 +72,12 @@ class PageController extends Controller{
     }
 
     function contact(){
-        return Response::view('contact', [
-
-        ]);
+        return Response::view('contact');
     }
 
     function sendMessage(SendMessageRequest $request, NotificationService $notificationService){
-        // dd($request->email);
         $notificationService
-                    ->subject('Attention Required! New Message from '.$request->name)
+                    ->subject('New Message from '.$request->name)
                     ->text("You have a new Message from <strong>$request->name</strong>")
                     ->text("<strong>Message:</strong> <p>$request->message</p>")
                     ->text("<strong>Phone Number:</strong> <p>$request->phone</p>")

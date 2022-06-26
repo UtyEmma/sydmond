@@ -32,7 +32,6 @@
                     <div class="col-xl-5">
                         <div class="heading heading--primary"><span class="heading__pre-title">Who we work with</span>
                             <h2 class="heading__title"><span>Our</span> <span>Partners & Donors</span></h2>
-                            <p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail, Canthigaster rostrata. Midshipman dartfish Modoc sucker, yellowtail kingfish</p>
                         </div>
                     </div>
                     <div class="col-xl-6 offset-xl-1">
@@ -40,17 +39,9 @@
                             <div class="col-12 col-md-6 text-md-left text-center">
                                 <div class="counter-item counter-item--style-3">
                                     <div class="counter-item__top">
-                                        <h6 class="counter-item__title">People We have Helped</h6>
-                                    </div>
-                                    <div class="counter-item__lower"><span class="js-counter">200</span><span>k</span></div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6 text-md-left text-center">
-                                <div class="counter-item counter-item--style-3">
-                                    <div class="counter-item__top">
                                         <h6 class="counter-item__title">Funds raise</h6>
                                     </div>
-                                    <div class="counter-item__lower"><span class="js-counter">65</span><span>bil</span></div>
+                                    <div class="counter-item__lower"><span class="js-counter">{{$donation/1000 + 20}}</span><span>k+</span></div>
                                 </div>
                             </div>
                         </div>

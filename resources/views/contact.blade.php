@@ -92,6 +92,8 @@
                 <div class="container">
                     <div class="row justify-content-end">
                         <div class="col-xl-6">
+                            <small class="text-danger">@if(session('error')) {{session('error')}} @endif</small>
+                            <small class="text-success">@if(session('success')) {{session('success')}} @endif</small>
                             <form class="form message-form" action="/contact" method="POST">
                                 @csrf
                                 <h6 class="form__title">Send Message</h6><span class="form__text">* The following info is required</span>

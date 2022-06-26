@@ -6,15 +6,12 @@ use App\Http\Requests\DonationRequest;
 use App\Http\Requests\DonorRequest;
 use App\Library\FileHandler;
 use App\Library\Response;
-use App\Library\Str;
 use App\Library\Token;
 use App\Models\Donations;
 use App\Models\Donor;
 use App\Services\NotificationService;
 use App\Services\PaymentService;
 use Illuminate\Http\Request;
-use Barryvdh\DomPDF\Facade\Pdf;
-use Illuminate\Support\Facades\Redirect;
 
 class DonationController extends Controller{
 
@@ -59,16 +56,15 @@ class DonationController extends Controller{
         return Response::redirect('/donate', 'success', "Your Donation has been received! Please check your Email");
     }
 
-    function downloadInvoice(Request $request, Donations $donation){
+    function downloadInvoice(Request $request, $id){
+        if(!$donation = Donations::find($id)) abort(404);
+        // dd($donation);
         if($request->email !== $donation->email) return abort(404);
 
         if($donation->status === 'completed') {
-            $pdf = Pdf::setOptions(['dpi' => 150,]);
-            $pdf->loadView('components.invoice', [
+            return Response::view('components.invoice', [
                 'donation' => $donation
             ]);
-            $pdf->render();
-            return $pdf->download(Str::slug(env('APP_NAME')." invoice").".pdf");
         }else{
             return Response::redirect('/donate', 'error', "Your Donation was not completed");
         }
@@ -76,9 +72,11 @@ class DonationController extends Controller{
 
     function donors(){
         $donors = Donor::paginate(9);
+        $donation = Donations::where('status', 'completed')->sum('amount');
         return Response::view('donors', [
             'siteName' => env('APP_NAME'),
-            'donors' => $donors
+            'donors' => $donors,
+            'donation' => $donation
         ]);
     }
 
@@ -93,6 +91,7 @@ class DonationController extends Controller{
 
     function list(){
         $donors = Donor::paginate();
+
         return Response::view('admin.donors', [
             'donors' => $donors
         ]);
