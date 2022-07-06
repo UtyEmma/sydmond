@@ -57,17 +57,22 @@
     <div class="container-fluid">
         <div class="row no-gutters justify-content-between">
             <div class="col-auto d-flex align-items-center">
-                <div class="dropdown-trigger d-none d-sm-block">
+                <div class="dropdown-trigger d-none d-md-block">
                     <div class="dropdown-trigger__item"></div>
                 </div>
-                <div class="header-logo"><a class="header-logo__link" href="/"><img class="header-logo__img logo--light" src="{{asset('site/img/logo_white.png')}}" alt="logo"/><img class="header-logo__img logo--dark" src="{{asset('site/img/logo_dark.png')}}" alt="logo"/></a></div>
+                <div class="header-logo">
+                    <a class="header-logo__link" href="/">
+                        <img class="header-logo__img logo--light" src="{{asset('site/img/logo_white.png')}}" alt="logo"/>
+                        <img class="header-logo__img logo--dark" src="{{asset('site/img/logo_dark.png')}}" alt="logo"/>
+                    </a>
+                </div>
             </div>
             <div class="col-auto">
                 <!-- main menu start-->
                 <nav>
                     <ul class="main-menu">
-                        <!--<li class="main-menu__item main-menu__item--active"><a class="main-menu__link" href="./"><span>Home</span></a>
-                        </li>-->
+                        <li class="main-menu__item main-menu__item--active"><a class="main-menu__link" href="/"><span>Home</span></a>
+                        </li>
                         <li class="main-menu__item"><a class="main-menu__link" href="/about"><span>About</span></a>
                         </li>
                         <li class="main-menu__item"><a class="main-menu__link" href="/faq"><span>FAQs</span></a>
@@ -98,12 +103,17 @@
                                 <li><a href="/donors"><span>Donors</span></a></li>
                             </ul>
                         </li>
-                        <!--<li class="main-menu__item"><a class="main-menu__link" href="contact"><span>Contacts</span></a></li>-->
+                        {{-- <li class="main-menu__item"><a class="main-menu__link" href="contact"><span>Contacts</span></a></li> --}}
                     </ul>
                 </nav>
             </div>
             <div class="col-auto d-flex align-items-center">
-                <a class="button button--squared" href="/donate"><span>Donate</span></a>
+                <div class="col-auto d-flex align-items-center py-4">
+                    <a class="button button--squared" href="/donate"><span>Donate</span></a>
+                    <div class="dropdown-trigger dropdown-trigger--inner d-block d-sm-none">
+                        <div class="dropdown-trigger__item"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
